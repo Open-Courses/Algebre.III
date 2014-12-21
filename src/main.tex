@@ -1,0 +1,100 @@
+%        File: main.tex
+%     Created: Son Dez 21 04:00  2014 C
+% Last Change: Son Dez 21 04:00  2014 C
+%
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\input{macros_math}
+\input{include_thm}
+
+
+\author{Danny Willems}
+\title{Algèbre III : Anneaux, polynôme et théorie de Galois}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Résumé du cours d'algèbre III. 2014 - 2015.
+\end{abstract}
+
+\section{Anneaux}
+
+\begin{proposition}
+	Il existe un unique morphisme d'anneau entre $\rational$ (resp $\integer$)
+	et $\complex$.
+\end{proposition}
+
+\begin{proof}
+	Si on a un morphisme f, on a par récurrence $\forall n \in \integer, f(n) =
+	n$. D'où, le seule morphisme est $({Id_{\complex}})_{|\integer}$.
+
+	La démonstration est la même pour $\rational$.
+\end{proof}
+
+\begin{proposition}
+	Il existe seulement deux morphismes d'anneaux entre $\rational[i]$ (resp
+	$\integer[i]$) et $\complex$.
+\end{proposition}
+
+\begin{proof}
+\end{proof}
+
+\begin{corollary}
+	\begin{enumerate}
+		\item \GSautomorphismDef{corps}{\rational} =
+			\GSautomorphismDef{anneau}{\rational} = \GSset{Id}
+		\item \GSautomorphismDef{anneau}{\integer} = \GSset{Id}
+	\end{enumerate}
+	En effet, si d'autres automorphismes existeraient, on pourrait étendre
+	l'ensemble d'arrivé en $\complex$, et ils resteraient des morphismes.
+\end{corollary}
+
+\begin{question}
+	Combien il y a d'automorphismes de corps sur $\complex$ ? Sur $\real$ ?
+	\href{http://www.math.uga.edu/~pete/Kestelman51.pdf}{Ici pour $\complex$}
+
+	Pour $\real$, le seul automorphisme continu est l'identité. En effet, comme
+	$\rational$ est dense dans $\real$, on a une suite d'élément de $\rational$
+	qui tend vers $x \in \real$. On a alors que $f(x)$ est la limite de la suite
+	$f(x_{n})$, où f maintenant est un morphisme de $\rational$ dans $\real$.
+	Or, le seul morphisme est l'identité, donc $f(x) = x$ à la limite.
+
+	Pour $\complex$, les seuls automorphismes sont l'identité et la conjugaison
+	(même raisonnement que pour $\real$ en décomposant l'image de f en partie
+	réelle et partie imaginaire).
+\end{question}
+
+\begin{proposition}
+	Soit \GSfunction{f}{A}{B} où A et B sont deux anneaux commutatifs. Alors
+	Im(f) est un sous-anneau de B, et ker(f) est un idéal de A.
+
+	De plus on a :
+	\begin{enumerate}
+		\item Si Im(f) est un idéal, f est surjectif.
+		\item Si Ker(f) est un sous-anneau, B = \GSset{0_{B}}.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+	Les seuls idéaux d'un corps $\mathbb{K}$ est $(0_{\mathbb{K}})$ où
+	$\mathbb{K}$.
+\end{proposition}
+
+\begin{corollary}
+	Soit $\mathbb{K}$ un corps et L un anneau, et \GSset{f}{$\mathbb{K}$}{L} un
+	morphisme d'anneau. Alors soit L est nul, soit f est injectif.
+\end{corollary}
+\end{document}
+
+
