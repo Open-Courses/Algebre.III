@@ -25,7 +25,7 @@
 \maketitle
 
 \begin{abstract}
-	Résumé du cours d'algèbre III. 2014 - 2015.
+	Résumé du cours d'algèbre III. 2014 - 2015. \textbf{En cours de rédaction}.
 \end{abstract}
 
 \section{Anneaux}
@@ -56,8 +56,10 @@
 			\GSautomorphismDef{anneau}{\rational} = \GSset{Id}
 		\item \GSautomorphismDef{anneau}{\integer} = \GSset{Id}
 	\end{enumerate}
+	\begin{proof}
 	En effet, si d'autres automorphismes existeraient, on pourrait étendre
 	l'ensemble d'arrivé en $\complex$, et ils resteraient des morphismes.
+	\end{proof}
 \end{corollary}
 
 \begin{question}
@@ -92,8 +94,65 @@
 \end{proposition}
 
 \begin{corollary}
-	Soit $\mathbb{K}$ un corps et L un anneau, et \GSset{f}{$\mathbb{K}$}{L} un
-	morphisme d'anneau. Alors soit L est nul, soit f est injectif.
+	Soit $\mathbb{K}$ un corps et L un anneau, et
+	\GSfunction{f}{$\mathbb{K}$}{L} un morphisme d'anneau. Alors soit L est nul,
+	soit f est injectif.
+\end{corollary}
+
+\begin{proposition}
+	Soit I et J deux idéaux d'un anneau commutatifs A tel que $I \subseteq J$.
+	Alors J/I est un idéal de A/I.
+\end{proposition}
+
+\begin{definition}
+	Soit A un anneau. On dit que A est euclidien si il existe une fonction
+	\GSfunction{N}{A}{$\naturel_{0}$} tel que : $\forall a, b \in A_{0}$, $\exists q,
+	r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r = 0.
+\end{definition}
+
+\begin{exemple}
+	\begin{enumerate}
+		\item $\integer$ avec la valeur absolue est un anneau euclidien.
+		\item $\integer$[i], les entiers de Gauss, muni de la norme complexe
+			usuelle au carré est un anneau euclidien.
+	\end{enumerate}
+\end{exemple}
+
+La proposition suivante est très importante pour définir les idéaux d'un anneau
+commutatif.
+
+\begin{proposition}
+	Tout anneau euclidien est principal, c'est-à-dire que tous ses idéaux sont
+	engendré par un élément.
+\end{proposition}
+
+\begin{proof}
+	Prenons un anneau euclidien A, ainsi qu'un idéal I de A. Si I = \GSset{0}
+	ou \GSset{0, 1}, on a fini (\GSset{0} est un idéal engendré par 0, et
+	\GSset{0, 1} = I car $1 \in I$.
+
+	Sinon, I possède deux éléments x et y non nul. Nous pouvons supposer, sans
+	perte de généralité\footnote{Si y ne vérifie pas la minimalité, on prend z
+	tel que N(z) est minimal, et on remplace dans la preuve x par y et y par
+z.}, que y est tel que N(y) = $\displaystyle min_{a \in I_{0}}$\GSset{N(a)} (en
+effet, l'ensemble des N(a) est un sous ensemble de N, donc il possède un
+minimum).
+	On a, comme A est euclidien, qu'il existe q et r appartenant à A tel que $x
+	= qy + r$, avec N(r) < N(y) ou r = 0.
+	On a alors $r = x - qy$ avec $x \in I$, $qy \in I$ (comme $q \in A$ et $y
+	\in I$ et I idéal), donc $r \in I$ comme I idéal.
+	
+	Or, si $N(r) < N(y)$ avec r non nul, cela contredirait la minimalité de N(y)
+	car $r \in I_{0}$. Donc r est nul.
+
+	On a alors que $x = qy$, c'est-à-dire que si on prend à chaque fois deux
+	éléments quelconques de I, l'un est multiple de l'autre, c'est-à-dire que
+	I est principal.
+\end{proof}
+
+\begin{corollary}
+	Les idéaux de $\integer$ (resp $\integer$[i]) sont les n$\integer$ où $n \in
+	\integer$ (resp $(a+bi) \integer$[i] où $a, b \in \integer$).
 \end{corollary}
 \end{document}
 
