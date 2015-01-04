@@ -1,9 +1,14 @@
 SRC_DIR	= src
-NAME	= main
+NAME	= Algebre.III
 SRC		= $(NAME).tex
 
 $(NAME):
 	cd src && pdflatex -output-directory ../ $(SRC)
+
+tar: fclean $(NAME)
+	$(MAKE) $(NAME)
+	$(MAKE) clean
+	zip -r $(NAME).zip . -x *.git*
 
 clean:
 	rm -f $(NAME).out $(NAME).aux $(NAME).toc $(NAME).log $(NAME).tex.backup
