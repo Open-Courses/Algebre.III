@@ -1,0 +1,326 @@
+\chapter{Anneaux}
+
+\section{Théorie générale}
+
+\subsection{Morphisme d'anneaux}
+\begin{proposition}
+	Il existe un unique morphisme d'anneau entre $\rational$ (resp $\integer$)
+	et $\complex$.
+\end{proposition}
+
+\begin{proof}
+	Si on a un morphisme f, on a par récurrence $\forall n \in \integer, f(n) =
+	n$. D'où, le seule morphisme est $({Id_{\complex}})_{|\integer}$.
+
+	La démonstration est la même pour $\rational$.
+\end{proof}
+
+\begin{proposition}
+	Il existe seulement deux morphismes d'anneaux entre $\rational[i]$ (resp
+	$\integer[i]$) et $\complex$.
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary}
+	\begin{enumerate}
+		\item \GSautomorphismDef{corps}{\rational} =
+			\GSautomorphismDef{anneau}{\rational} = \GSset{Id}
+		\item \GSautomorphismDef{anneau}{\integer} = \GSset{Id}
+	\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+	En effet, si d'autres automorphismes existeraient, on pourrait étendre
+	l'ensemble d'arrivé en $\complex$, et ils resteraient des morphismes.
+\end{proof}
+
+\begin{question}
+	Combien il y a d'automorphismes de corps sur $\complex$ ? Sur $\real$ ?
+	\href{http://www.math.uga.edu/~pete/Kestelman51.pdf}{Ici pour $\complex$}
+
+	Pour $\real$, le seul automorphisme continu est l'identité. En effet, comme
+	$\rational$ est dense dans $\real$, on a une suite d'élément de $\rational$
+	qui tend vers $x \in \real$. On a alors que $f(x)$ est la limite de la suite
+	$f(x_{n})$, où f maintenant est un morphisme de $\rational$ dans $\real$.
+	Or, le seul morphisme est l'identité, donc $f(x) = x$ à la limite.
+
+	Pour $\complex$, les seuls automorphismes sont l'identité et la conjugaison
+	(même raisonnement que pour $\real$ en décomposant l'image de f en partie
+	réelle et partie imaginaire).
+\end{question}
+
+\subsection{Idéaux}
+
+\begin{definition} [Idéal]
+	
+\end{definition}
+
+\begin{exemple}
+	
+\end{exemple}
+
+\begin{proposition}
+	Soit \GSfunction{f}{A}{B} où A et B sont deux anneaux commutatifs. Alors
+	Im(f) est un sous-anneau de B, et ker(f) est un idéal de A.
+
+	De plus on a :
+	\begin{enumerate}
+		\item Si Im(f) est un idéal, f est surjectif.
+		\item Si Ker(f) est un sous-anneau, B = \GSset{0_{B}}.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Les seuls idéaux d'un corps $\mathbb{K}$ est $(0_{\mathbb{K}})$ où
+	$\mathbb{K}$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soit $\mathbb{K}$ un corps et L un anneau, et
+	\GSfunction{f}{$\mathbb{K}$}{L} un morphisme d'anneau. Alors soit L est nul,
+	soit f est injectif.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Soit I et J deux idéaux d'un anneau commutatifs A tel que $I \subseteq J$.
+	Alors J/I est un idéal de A/I.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{definition}
+	Soit A un anneau. On dit que A est euclidien si il existe une fonction
+	\GSfunction{N}{A}{$\naturel_{0}$} tel que : $\forall a, b \in A_{0}$, $\exists q,
+	r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r = 0.
+\end{definition}
+
+\begin{exemple}
+	\begin{enumerate}
+		\item $\integer$ avec la valeur absolue est un anneau euclidien.
+		\item $\integer$[i], les entiers de Gauss, muni de la norme complexe
+			usuelle au carré est un anneau euclidien.
+	\end{enumerate}
+\end{exemple}
+
+\subsection{Anneau euclidien}
+
+La proposition suivante est très importante pour définir les idéaux d'un anneau
+commutatif.
+
+\begin{definition} [Anneau euclidien]
+	
+\end{definition}
+
+\begin{proposition}
+	Tout anneau euclidien est principal, c'est-à-dire que tous ses idéaux sont
+	engendré par un élément.
+\end{proposition}
+
+\begin{proof}
+	Prenons un anneau euclidien A, ainsi qu'un idéal I de A. Si I = \GSset{0}
+	ou \GSset{0, 1}, on a fini (\GSset{0} est un idéal engendré par 0, et
+	\GSset{0, 1} = I car $1 \in I$.
+
+	Sinon, I possède deux éléments x et y non nul. Nous pouvons supposer, sans
+	perte de généralité\footnote{Si y ne vérifie pas la minimalité, on prend z
+	tel que N(z) est minimal, et on remplace dans la preuve x par y et y par
+z.}, que y est tel que N(y) = $\displaystyle min_{a \in I_{0}}$\GSset{N(a)} (en
+effet, l'ensemble des N(a) est un sous ensemble de N, donc il possède un
+minimum).
+	On a, comme A est euclidien, qu'il existe q et r appartenant à A tel que $x
+	= qy + r$, avec N(r) < N(y) ou r = 0.
+	On a alors $r = x - qy$ avec $x \in I$, $qy \in I$ (comme $q \in A$ et $y
+	\in I$ et I idéal), donc $r \in I$ comme I idéal.
+	
+	Or, si $N(r) < N(y)$ avec r non nul, cela contredirait la minimalité de N(y)
+	car $r \in I_{0}$. Donc r est nul.
+
+	On a alors que $x = qy$, c'est-à-dire que si on prend à chaque fois deux
+	éléments quelconques de I, l'un est multiple de l'autre, c'est-à-dire que
+	I est principal.
+\end{proof}
+
+\begin{corollary}
+	Les idéaux de $\integer$ (resp $\integer$[i]) sont les n$\integer$ où $n \in
+	\integer$ (resp $(a+bi) \integer$[i] où $a, b \in \integer$).
+\end{corollary}
+
+On peut également en déduire que si un anneau possède un idéal non principal,
+alors il ne possède pas de division euclidienne, ce qui est le cas pour $Z[X]$.
+
+
+\subsection{Irréductibilité}
+
+\begin{definition} [Élément irréductible]
+	
+\end{definition}
+
+\begin{exemple}
+	Soit $n \in \integer$, $n$ est irréductible dans $\integer$ ssi n est
+	premier.
+\end{exemple}
+
+\begin{proposition}
+	$a$ est irréductible dans $A$ ssi $\forall u \in A^{*}$, $ua$ est
+	irréductible dans $A$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Soit $f$ un isomorphisme d'anneau. $a$ est irréductible ssi $f(a)$ est
+	irréductible.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{exemple}
+	On a vu que la conjugaison est un automorphisme d'anneau, donc si $z$ est
+	irréductible, $\conjugate{z}$ l'est aussi.
+\end{exemple}
+
+Une remarque importante est que l'irréductibilité d'un élément dépend de l'anneau
+dans lequel nous nous trouvons. On a par exemple $2$ irréductible dans
+$\integer$ mais $2$ est réductible dans $\complex$ parce que $2 = (1 + i) (1 -
+i)$.
+
+
+
+\section{Théorème chinois}
+
+\subsection{Aspect historique}
+% Aspect historique
+
+\subsection{Énoncé}
+% Théorème + preuve
+
+\subsection{Interprétation et applications}
+% Interprétation et applications
+%	Indicatrice d'Euler
+%		Définition
+%		Propriété
+%		Calcul
+
+
+\section{Classification partielle des idéaux}
+
+% Changer le titre ?
+% Il en existe d'autre ?
+% Peut-on vraiment tous les classer ?
+
+\begin{definition} [Idéal premier]
+
+\end{definition}
+
+\begin{definition} [Idéal maximal]
+
+\end{definition}
+
+\begin{definition} [Anneau intégre]
+	
+\end{definition}
+
+\begin{definition} [Corps]
+
+\end{definition}
+
+\begin{proposition}
+	Tout idéal maximal est premier.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Soit $I$ un idéal d'un anneau commutatif $A$.
+	\begin{enumerate}
+		\item $I$ est un idéal maximal $\Leftrightarrow A/I$ est un
+			corps.
+		\item $I$ est un idéal premier $\Leftrightarrow A/I$ est
+			intégre.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{exemple}
+	%Z/nZ
+\end{exemple}
+
+\begin{theorem}
+	Tout idéal est contenu dans un idéal maximal.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+\section{Anneau de polynomes}
+
+\begin{proposition}
+	Soit $K$ un corps, alors $K[X]$ possède une division euclidienne. Par
+	conséquent, $K[X]$ est principal.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Soit $K$ un corps,
+	$\forall I$ idéal non nul, $\exists ! P \in K[X]$ monique tel que $I = (P)$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Soit $K$ un corps, $P \in K[X]$.
+	\begin{enumerate}
+		\item $(P)$ est maximal $\Leftrightarrow$ $P$ est irréductible.
+		\item $(P)$ est premier $\Leftrightarrow$ $P = 0$ ou $P$
+			irréductible.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+On a alors comme corollaire :
+
+\begin{corollary}
+	\begin{enumerate}
+		\item $P$ est irréductible $\Leftrightarrow$ $K[X]/(P)$ est un corps.
+		\item $P = 0$ ou $P$ est irréductible $\Leftrightarrow$ $K[X]/(P)$ est
+			intègre.
+	\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
