@@ -56,6 +56,20 @@
 
 \begin{definition} [Idéal]
 	
+	\label{ideal}
+\end{definition}
+
+\begin{definition} [Idéal principal]
+	Un idéal $I$ est un \textbf{idéal principal} si il est engendré par un seul
+	élément. On note, si $a \in A$ engendre $I$, $I = (a)$.
+	\label{principal_ideal}
+\end{definition}
+
+Nous pouvons alors créer une classe d'anneaux : les anneaux principaux.
+
+\begin{definition} [Anneau principal]
+	Un anneau $A$ est un \textbf{anneau principal} si tout idéal est principal.
+	\label{principal_ring}
 \end{definition}
 
 \begin{exemple}
@@ -74,7 +88,9 @@
 \end{proposition}
 
 \begin{proof}
-	
+	$1$. On doit montrer que$ Im(f) = B$. Comme $f$ morphisme, $1 \in Im(f)$, on a
+	donc que $Im(f) = B$ car $Im(f)$ est un idéal.
+	$2$. 
 \end{proof}
 
 \begin{proposition}
@@ -83,7 +99,9 @@
 \end{proposition}
 
 \begin{proof}
-	
+	Soit $I$ un idéal. S'il est nul, on a fini. Sinon on a un élément non
+	nul $a \in I$. Comme $K$ est un corps, $a^{-1} \in K$, et donc $a^{-1}a = 1
+	\in I$ car $I$ idéal. Donc $I = K$.
 \end{proof}
 
 \begin{corollary}
@@ -105,10 +123,18 @@
 	
 \end{proof}
 
-\begin{definition}
-	Soit A un anneau. On dit que A est euclidien si il existe une fonction
-	\GSfunction{N}{A}{$\naturel_{0}$} tel que : $\forall a, b \in A_{0}$, $\exists q,
-	r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r = 0.
+\subsection{Anneau euclidien}
+
+La proposition suivante est très importante pour définir les idéaux de certains
+anneaux commutatifs, appelé anneau euclidien. Malheureusement, tout anneau
+commutatif n'est pas euclidien.
+
+\begin{definition} [Anneau euclidien]
+	Soit A un anneau. On dit que A est un \textbf{anneau euclidien} si il existe
+	une fonction \GSfunction{N}{A}{$\naturel_{0}$} tel que : $\forall a, b \in
+	A_{0}$, $\exists q, r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r =
+	0.
+	\label{euclidian_ring}
 \end{definition}
 
 \begin{exemple}
@@ -119,18 +145,10 @@
 	\end{enumerate}
 \end{exemple}
 
-\subsection{Anneau euclidien}
-
-La proposition suivante est très importante pour définir les idéaux d'un anneau
-commutatif.
-
-\begin{definition} [Anneau euclidien]
-	
-\end{definition}
-
 \begin{proposition}
 	Tout anneau euclidien est principal, c'est-à-dire que tous ses idéaux sont
 	engendré par un élément.
+	\label{euclidian_implies_principal}
 \end{proposition}
 
 \begin{proof}
@@ -164,17 +182,35 @@ minimum).
 
 On peut également en déduire que si un anneau possède un idéal non principal,
 alors il ne possède pas de division euclidienne, ce qui est le cas pour $Z[X]$.
+On en déduit donc que tout anneau commutatif n'est pas euclidien.
 
+Par contre, nous avons :
+\begin{proposition}
+	Tout anneau euclidien est commutatif.
+\end{proposition}
+
+Nous avons la chaine d'inclusion suivante (non-exhaustive) pour les classes
+d'idéaux :
+\begin{theorem}
+	Corps 
+	$\displaystyle \subsetneq$ Anneaux euclidiens
+	$\displaystyle \subseteq^{\ref{euclidian_implies_principal}}$ Anneaux principaux
+	$\subseteq$ Anneaux factoriels $\subseteq$ Anneaux intègres $\subseteq$
+	Anneaux commutatifs.
+	\label{ideal_class}
+\end{theorem}
 
 \subsection{Irréductibilité}
 
 \begin{definition} [Élément irréductible]
-	
+	Soit $a \in A$. $a$ est dit irréductible si $\forall x, y \in A$, $a = xy
+	\Rightarrow x \in A^{*}$ ou $y \in A^{*}$.
+	\label{irreductible_element}
 \end{definition}
 
 \begin{exemple}
-	Soit $n \in \integer$, $n$ est irréductible dans $\integer$ ssi n est
-	premier.
+	Soit $n \in \integer$, $n$ est irréductible dans $\integer$ ssi $n = \pm p$
+	où p premier.
 \end{exemple}
 
 \begin{proposition}
@@ -205,8 +241,29 @@ dans lequel nous nous trouvons. On a par exemple $2$ irréductible dans
 $\integer$ mais $2$ est réductible dans $\complex$ parce que $2 = (1 + i) (1 -
 i)$.
 
+Donnons maintenant quelques équivalences en termes d'idéaux. La définition
+\ref{irreductible_element} date du XIXè siècle, la suivante, plus couramment
+utilisée actuellement, date du début du XXè siècle.
 
+\begin{proposition}
 
+	$a$ est irréductible
+
+	$\Leftrightarrow$
+	$a \notin A^{*}, a \ne 0$ $b | a \Rightarrow b \in A^{*}$ ou $\exists u \in
+	A^{*}, b = ua$.
+
+	$\Leftrightarrow$
+	$(a) \ne (0)$, $(a) \ne A$, $(a) \subseteq (b) \Rightarrow (b) = A$ ou $(a)
+	= (b)$
+
+	$\Leftrightarrow$
+	$(a) \ne (0)$, $(a)$ maximal parmi les idéaux principaux différents de $A$.
+\end{proposition}
+
+\begin{proof}
+	Chaque équivalence est une réécriture.
+\end{proof}
 \section{Théorème chinois}
 
 \subsection{Aspect historique}
@@ -214,9 +271,68 @@ i)$.
 
 \subsection{Énoncé}
 % Théorème + preuve
+Nous souhaitons, pour deux anneaux donnés, et sous certaines conditions, montrer
+que $A/(I \cap J)$ est isomorphe à $A/I \times A/J$.
+
+Soient $I, J$ deux idéaux de $A$. Alors, nous pouvons construire
+\GSfunction{$f$}{$A$}{$A/I \times A/J$} : $a \rightarrow (a + I, a + J)$.
+Nous avons $ker(f) = I \cap J$.
+
+On a alors un morphisme injectif \GSfunction{$\overline{f}$}{$A/(I \cap
+J)$}{$A/I \times A/J$} induit par $f$.
+
+Il nous manque donc une condition, la surjectivité, pour avoir un isomorphisme
+entre ces deux anneaux.
+On en vient alors au théorème chinois :
+
+\begin{theorem}
+	Si $I + J = A$, alors $\overline{f}$ est surjectif, et donc $A/(I \cap
+	J)$ est isomorphe à $A/I \times A/J$.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+On peut généraliser ce théorème à un nombre fini d'idéaux $I_{1}, \ldots,
+I_{n}$.
+
+On construit comme précédemment $f$, et on déduit un morphisme injectif
+$\overline{f}$. Il suffit de trouver une condition pour que $\overline{f}$. Nous
+avons alors le résultat suivant, dit théorème chinois généralisé.
+
+\begin{theorem}
+	Si $\forall k \in \left\{1, \ldots, n\right\}$, $I_{k} + \displaystyle
+	\bigcap_{1 = i \ne k}^{n} I_{i} = A$, alors $\overline{f}$ est surjectif, et
+	donc \GSprodSet{i}{1}{n}{A/I} est isomorphe à $\displaystyle A/\bigcap_{i = 1}^{n}
+	I_{i}$.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
 
 \subsection{Interprétation et applications}
 % Interprétation et applications
+
+Le théorème chinois généralisé a une application en théorie des polynômes, dont
+la théorie des anneaux de polynôme sera un peu étudiée au chapitre 2.
+Nous allons maintenant définir l'indicatrice d'Euler, et en donner quelques
+propriétés.
+On s'en servira dans le chapitre 2.
+
+\begin{definition}
+	L'indicatrice d'Euler, noté souvent $\phi$ est la fonction
+	\GSfunction{$\phi$}{$\naturel$}{$\naturel$} : $n \rightarrow
+	|(\integer/n\integer)^{*}|$.
+\end{definition}
+
+L'indicatrice d'Euler donne donc, pour chaque $n \in \naturel$, le nombre
+d'élément inversible de $\integer/n\integer$.
+On obtient directement une première propriété : $\phi(p) = p - 1$ où $p$ est
+premier. En effet $\integer/p\integer$ est un corps, donc tous les éléments non
+nuls sont inversibles.
+
 %	Indicatrice d'Euler
 %		Définition
 %		Propriété
@@ -278,7 +394,20 @@ i)$.
 \begin{proof}
 	
 \end{proof}
-\section{Anneau de polynomes}
+\section{Anneau de polynômes}
+
+\begin{proposition}
+	\begin{enumerate}
+		\item $A$ intègre $\Leftrightarrow$ $(X)$ idéal premier de $A[X]$
+		\item $A$ corps $\Leftrightarrow$ $(X)$ idéal maximal de $A[X]$
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Si on prend la fonctions surjective $eval_{0}$, on a un isomorphisme induit
+	entre $A$ et $A[X]/(X)$. Comme $(X)$ est un idéal premier, $A[X]/(X)$ est
+	intègre. Par l'isomorphisme, $A$ est intègre.
+\end{proof}
 
 \begin{proposition}
 	Soit $K$ un corps, alors $K[X]$ possède une division euclidienne. Par
@@ -286,16 +415,25 @@ i)$.
 \end{proposition}
 
 \begin{proof}
-	
 \end{proof}
 
 \begin{proposition}
 	Soit $K$ un corps,
-	$\forall I$ idéal non nul, $\exists ! P \in K[X]$ monique tel que $I = (P)$.
+	Pour tout idéal $I$ non nul, il existe un \textbf{unique} $P \in K[X]$
+	\textbf{monique} tel que $I = (P)$.
 \end{proposition}
 
 \begin{proof}
+	Commençons par l'existence.
+
+	Comme $K$ est un corps, $K[X]$ est principal, et donc chaque idéal est
+	engendré par un élément. Notons celui-ci $Q(X) = a_{n}X^{n} + \ldots +
+	a_{1}X + a_{0}, a_{n} \ne 0$. On a donc $I = (Q)$. Comme $K$ est un corps, on peut
+	définir $a_{n}^{-1}$, et $P(X) = a_{n}^{-1}Q(X) \in I$. Celui-ci est
+	monique, et on a de plus que $(P) = (Q) = I$ car $P$ et $Q$ sont copremiers.
 	
+	Supposons maintenant qu'il existe un autre polynôme monique $S(X)$
+	engendrant $I$. (A finir).
 \end{proof}
 
 \begin{proposition}
@@ -324,3 +462,114 @@ On a alors comme corollaire :
 \begin{proof}
 	
 \end{proof}
+
+\begin{proposition}
+	Soit $K[X]$ où $K$ est un corps. Soit $P \in K[X]$.
+	
+	Si $P$ est de degré $1$, alors $P$ est irréductible.
+	
+	De plus, si $K$ est algébriquement clos et $P$ irréductible, alors $P$ est
+	de degré $1$.
+\end{proposition}
+\subsection{Polynômes à coefficients dans $\integer[X]$}
+
+Dans cette partie nous allons étudier les propriétés que les polynômes à
+coefficients dans $\integer[X]$ possèdent dans $\rational[X]$ et dans
+$\integer[X]$.
+
+% Parler des liens avec la théorie des nombres ?
+% Donner des applications avec la théorie des nombres ?
+
+Dans la suite, on considère que $P(X) = a_{n}X^{n} + \ldots + a_{1}X + a_{0}$
+est un polynôme à coefficients dans $\integer$.
+
+Rappelons d'abord la définition d'irréductibilité dans le cas de $\rational[X]$
+et $\integer[X]$.
+
+Prenons $P(X)$ qui n'est pas inversible dans $\rational[X]$ (resp dans
+$\integer[X]$).
+Ce polynôme $P(X)$ est irréductible dans $\rational[X]$ (resp $\integer[X]$) si
+pour toute décomposition de $P(X)$ en deux polynômes $Q(X)$ et $R(X)$ ($P =
+QR$), on a $Q(X) \in \rational$ ou $R(X) \in \rational_{0}$ (resp $Q(X) = \pm 1$
+ou $R(X) = \pm 1$ car les inversibles de $\integer[X]$ sont $1$ et $-1$).
+
+Prenons $P(X) = 2X-2$. On a $P(X)$ qui est irréductible dans
+$\rational[X]$ mais celui-ci est réductible dans $\integer[X]$ car $P(X) =
+2(X-1)$. On n'a donc pas ($P(X)$ irréductible dans $\rational[X] \Rightarrow
+P(X)$ irréductible dans $\integer[X]$).
+
+Nous avons tout de même, sous certaines hypothèses, que l'implication est vraie.
+
+\begin{proposition}
+	Si $pgcd(a_{0}, \ldots, a_{n}) = \pm 1$, alors :
+
+	Si $P(X)$ est irréductible dans $\rational[X]$, alors $P(X)$ est
+	irréductible dans $\integer[X]$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{theorem} [Critère Eisenstein\footnote{Ferdinand \textbf{Gotthold} Max
+		\textbf{Eisenstein} : 16 avril 1823 (Berlin) - 11 octobre 1862 (Berlin).
+Mathématicien allemand d'origine juive. Mort de tuberculose. Élève de Dirichlet
+à l'université de Berlin.}]
+	Soit $p$ premier tel que :
+
+	\begin{itemize}
+		\item $p$ ne divise pas $a_{n}$
+		\item $\forall i \in \left\{ 0, \ldots, n - 1 \right\}$, $p$ divise
+			$a_{i}$.
+		\item $p^{2}$ ne divise pas $a_{0}$.
+	\end{itemize}
+	\label{critere_E}
+	Alors, $P(X)$ est irréductible dans $\rational[X]$.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+Nous avons également un théorème qui permet de déterminer l'irréductibilité d'un
+polynôme. Celui-ci se sert du corps $\integer/p\integer$ où p est premier.
+
+\begin{theorem}
+	Si il existe un nombre premier $p$ tel que le polynôme $\overline{P}(X) =
+	\overline{a_{n}}X^{n} + \ldots + \overline{a_{1}}X + \overline{a_{0}}$ où
+	$\overline{a_{i}} = a_{i}$ mod(p) est irréductible dans
+	$\integer/p\integer[X]$, alors $P(X)$ est irréductible dans $\rational[X]$.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+%exemple
+
+\begin{corollary}
+	Grace à ce dernier théorème, on en déduit que $X^{p - 1} + \ldots + X + 1$
+	est irréductible dans $Q[X]$ (et dans $\integer[X]$) quand p est premier.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+\subsection{Polynômes cyclotomiques}
+
+Nous allons maintenant étudier certains polynômes appelés polynômes
+cyclotomiques.
+
+%D'abord, rappelons que le polynôme $X^{n} - 1$ possèdent n racines complexes,
+%appelées racines n-ième de l'unité, et qui sont $e^{\frac{2ki\pi}{n}}$, où $k$ va
+%de $0$ à $n - 1$. On peut de la même manière dire que $k \in
+%\integer/n\integer$.
+
+%De plus, les racines n-ième de l'unité forment un groupe d'ordre n, qui est
+%l'unique sous-groupe d'ordre n de $\complex$, qui est cyclique, et isomorphe à
+%$\integer/n\integer$.
+
+%On a, si on prend une de ces racines qui est d'ordre $d$, alors il engendre un
+%unique sous-groupe d'ordre $d$. Ce $d$ doit diviser $n$ par le théorème de
+%Lagrange. Dénotons cet unique sous-groupe d'ordre d par $S_{d}$.
+
+
