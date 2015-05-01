@@ -3,6 +3,10 @@ NAME	= Algebre.III
 SRC		= $(NAME).tex
 
 $(NAME):
+	cd $(SRC_DIR) && pdflatex -output-directory ../ "\def\outputproof{0} \input{$(SRC)}"
+	cd $(SRC_DIR) && pdflatex -output-directory ../ "\def\outputproof{0} \input{$(SRC)}"
+
+noproof:
 	cd $(SRC_DIR) && pdflatex -output-directory ../ $(SRC)
 	cd $(SRC_DIR) && pdflatex -output-directory ../ $(SRC)
 

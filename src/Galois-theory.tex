@@ -1,19 +1,109 @@
 \chapter{Théorie de Galois}
 
-\begin{definition} [Extension de corps et sous corps]
-	
+\section{Extension de corps}
+
+Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
+élément non inversible est $0_{A}$.
+
+\begin{definition} [Morphisme de corps]
+	\label{def:morphisme_corps}
+	Soit $K$ et $F$ deux corps. \textbf{Un morphisme de corps entre $K$ et $F$}
+	est un morphisme d'annau.
 \end{definition}
 
+\begin{proposition}
+	Tout morphisme de corps est injectif
+\end{proposition}
+
+\begin{definition} [Extension de corps et sous corps]
+	\label{def:extension_sous_corps}
+	Soit $K$ et $L$ deux corps. On dit que $L$ est \textbf{une extension de
+	corps}, et $K$ \textbf{un sous corps de $L$} si $K \subseteq L$ et on note
+	$L/K$.
+\end{definition}
+
+\begin{proposition}
+	Soit une extension de corps $L/K$. Alors $L$ est un $K$-espace vectoriel.
+\end{proposition}
+
+\begin{definition} [Degré d'une extension]
+	\label{def:degre_extension}
+	Soit $L/K$ une extension de corps. On définit \textbf{le degré de
+	l'extension $L/K$} par la dimension de $L$ en tant que $K$-espace
+	vectoriel, et on note $\extensionDegree{L}{K}$.
+\end{definition}
+
+\begin{definition} [Extension finie]
+	Soit $L/K$ une extension de corps. On dit que $L/K$ est \textbf{une
+	extension finie} si le degré de $L/K$ ($\extensionDegree{L}{K}$) est fini.
+\end{definition}
+
+\begin{remarque}
+	Soient $K \subseteq L \subseteq M$ trois corps.
+	Alors:
+	\begin{enumerate}
+		\item $\extensionDegree{L}{K} \leq \extensionDegree{M}{K}$.
+		\item $\extensionDegree{M}{K}$ fini $\implies$ $\extensionDegree{L}{K}$
+			fini.
+		\item $\extensionDegree{L}{K} = 1$ $\equiv$ $L = K$.
+	\end{enumerate}
+\end{remarque}
+
+\begin{proposition} [Multiplicativité des degrés]
+	Soient $K \subseteq L \subseteq M$ trois corps. Alors
+	$\extensionDegree{M}{L} \extensionDegree{L}{K} = \extensionDegree{M}{K}$.
+\end{proposition}
+
+\begin{proposition} [Multiplicativité des degrés généralisée]
+	Soient $L_{1} \subseteq L_{2} \subseteq \cdots \subseteq L_{n}$.
+	Alors $\extensionDegree{L_{n}}{L_{1}} =
+	\displaystyle \prod_{i = 1}^{n - 1} \extensionDegree{L_{i + 1}}{L_{i}}$.
+\end{proposition}
+
+\begin{remarque}
+	Soit $K \subseteq L \subseteq M$. Alors $\extensionDegree{L}{K} /
+	\extensionDegree{M}{K}$ et $\extensionDegree{M}{L} /
+	\extensionDegree{M}{K}$. En particulier, si $\extensionDegree{M}{K}$ est un
+	nombre premier, alors il n'existe pas de corps strictement entre $K$ et $M$.
+\end{remarque}
+
+\begin{exercice}
+	Il n'y a pas de corps strictement compris entre $\complex$ et $\real$.
+\end{exercice}
+
+\begin{definition}
+	Soient $L/K$ et $M/K$ deux extensions de corps. Alors on définit:
+	% Definition de L \inter M
+	% Definition de LM
+\end{definition}
+
+\begin{definition}
+	Soit $L/K$ une extension de corps. Soit $S \subseteq L$ (sans nécessairement
+	de structures).
+
+	On définit $K(S)$ par \ldots.
+\end{definition}
+
+\begin{proposition}
+	Soit $L/K$ une extension de corps. Soit $\alpha$, $\beta \in L$.
+	Alors $K(\alpha, \beta) = K(\alpha)K(\beta)$.
+\end{proposition}
 
 Prenons $\alpha \in L$ qui est algébrique sur $K$, et construisons le morphisme
-d'évaluation $ev_{\alpha, K} : K[X] \rightarrow L : P(X) \rightarrow P(\alpha)$
-non nul. On pose $K[\alpha] = Im(\alpha)$.
+d'évaluation $eval_{\alpha, K} : K[X] \rightarrow L : P(X) \rightarrow P(\alpha)$
+non nul. On pose $K[\alpha] = Im(eval_{\alpha, K})$.
 
 Comme $K$ est un corps, on a que $K[X]$ est euclidien, et donc que ses idéaux
 sont engendrés par un élément.
 
-Comme $ev_{\alpha, K}$ morphisme, on a $\ker{ev_{\alpha, K}} = (P)$.
+Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 % l'évaluation est non nul => ker = (P).
+
+\begin{definition} [Algébrique / transcendant]
+	Soit $L/K$ et $\alpha \in L$. on dit que \textbf{$\alpha$ est algébrique sur
+	$K$} si $\ker{(eval_{\alpha, K})} \neq \GSset{0}$.
+	Sinon, $\alpha$ est dit \textbf{transcendant}.
+\end{definition}
 
 \begin{proposition}
 	Soit $\alpha \in L$ algèbrique sur $K$. Alors $K[\alpha]$ est un corps.
@@ -21,16 +111,81 @@ Comme $ev_{\alpha, K}$ morphisme, on a $\ker{ev_{\alpha, K}} = (P)$.
 
 \begin{definition} [Polynome minimal]
 	Soit $\alpha \in L$ algébrique sur $K$. Le polynome minimal de $\alpha$ sur
-	$K$ est l'unique $P_{\alpha, K} \in K[X]$ monique tel que $\ker{ev_{\alpha,
-	K}} = (P_{\alpha, K})$.
+	$K$ est l'unique $P_{\alpha, K} \in K[X]$ monique tel que $\ker{(eval_{\alpha,
+	K})} = (P_{\alpha, K})$. En particulier, $P_{\alpha, K}$ est irréductible
+	sur $K$.
 \end{definition}
 
+\begin{proposition}
+	\label{prop:extension_finie_alpha_equiv_alpha_algebrique}
+	Soient $L/K$ une extension de corps, et $\alpha \in L$ algébrique sur $K$.
+	Soit $n = deg(P_{\alpha, K})$.
+	Alors $(1, \alpha, \alpha^{2}, \cdots, \alpha^{n - 1})$ est une base de $K(\alpha)$ en tant que $K$
+	espace vectoriel. Et donc, en particulier, $\extensionDegree{K(\alpha)}{K} =
+	deg(P_{\alpha, K})$.
+\end{proposition}
+
+\begin{corollary}
+	Soit $L/K$ une extension de corps, et soit $\alpha \in L$. Alors
+	$K(\alpha)/K$ est finie ssi $\alpha$ est algébrique sur $K$.
+\end{corollary}
+
+\section{Extension algébrique}
+
+\begin{definition} [Extension algébrique]
+	Soit $L/K$ est une extension de corps. On dit que l'extension $L/K$ est
+	\textbf{algébrique} si tout élément de $L$ est algébrique sur $K$. De
+	manière équivalente, grace à
+	\ref{prop:extension_finie_alpha_equiv_alpha_algebrique}, que $K(\alpha)/K$
+	est une extension finie pour tout $\alpha$ dans $L$.
+\end{definition}
+
+\begin{exemple}
+	$\complex/\real$ est une extension algébrique.
+
+	$\rational(i)/\rational$ est une extension algébrique.
+
+	$\real/\rational$ n'est pas une extension algébrique.
+\end{exemple}
+
+\begin{proposition}
+	Soit $K \subseteq L \subseteq M$. On a que $M/K$ est une extension
+	algébrique ssi $M/L$ et $L/K$ sont des extensions algébriques.
+\end{proposition}
+
+\begin{proposition}
+	Soit $L/K$ une extension finie. Alors $L/K$ est une extension algébrique.
+\end{proposition}
+
 \begin{remarque}
-	\begin{itemize}
-		\item $\alpha \in K \Leftrightarrow P_{\alpha, K} = X - \alpha
-			\Leftrightarrow deg(P_{\alpha, K}$
-		\item $\alpha^{-1} = \frac{\alpha^{n-1} + \alpha^{n-1} a_{n-2} + \cdots
-			+ a_{1}}{-a_{0}}$.
-		\item Si $\alpha$
-	\end{itemize}
+	La réciproque est fausse.
 \end{remarque}
+
+\begin{proposition}
+	Soit $L/K$ une extension finie. Alors il existe $n \geq 1$, et $\alpha_{1}$,
+	\ldots, $\alpha_{n}$ algébrique sur $K$ tel que $L = K(\alpha_{1}, \cdots,
+	\alpha_{n})$.
+\end{proposition}
+
+\begin{proposition}
+	Soit $L/K$ une extension de corps.
+	Soit $F$ l'ensemble des éléments de $L$ algébrique sur $K$.
+	Alors $F$ est un sous corps de $L$ contenant $K$.
+\end{proposition}
+
+\begin{definition}
+	On appelle $F$, défini précédemment, \textbf{la cloture algébrique de $K$
+	sur $L$}.
+	On note habituellement $F$ par $\overline{K}$.
+\end{definition}
+
+Remarquons qu'a priori la cloture algébrique est dépendante d'une extension de corps. On
+montrera par après que 
+\begin{theorem}
+	Soit $K$ un corps. Alors il existe un corps algébriquement clos $\Omega$
+	contenant $K$.
+\end{theorem}
+
+\section{$K$-plongement}
+
+\section{Groupe de Galois en caractéristique nulle}

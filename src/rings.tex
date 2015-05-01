@@ -8,34 +8,40 @@
 	et $\complex$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Si on a un morphisme f, on a par récurrence $\forall n \in \integer, f(n) =
 	n$. D'où, le seule morphisme est $({Id_{\complex}})_{|\integer}$.
 
 	La démonstration est la même pour $\rational$.
 \end{proof}
+\fi
 
 \begin{proposition}
 	Il existe seulement deux morphismes d'anneaux entre $\rational[i]$ (resp
 	$\integer[i]$) et $\complex$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{corollary}
 	\begin{enumerate}
-		\item \GSautomorphismDef{corps}{\rational} =
-			\GSautomorphismDef{anneau}{\rational} = \GSset{Id}
-		\item \GSautomorphismDef{anneau}{\integer} = \GSset{Id}
+		\item $\GSautomorphismDef{corps}{\rational} =
+			\GSautomorphismDef{anneau}{\rational} = \GSset{Id}$
+		\item $\GSautomorphismDef{anneau}{\integer} = \GSset{Id}$
 	\end{enumerate}
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	En effet, si d'autres automorphismes existeraient, on pourrait étendre
 	l'ensemble d'arrivé en $\complex$, et ils resteraient des morphismes.
 \end{proof}
+\fi
 
 \begin{question}
 	Combien il y a d'automorphismes de corps sur $\complex$ ? Sur $\real$ ?
@@ -55,7 +61,7 @@
 \subsection{Idéaux}
 
 \begin{definition} [Idéal]
-	
+
 	\label{ideal}
 \end{definition}
 
@@ -73,55 +79,63 @@ Nous pouvons alors créer une classe d'anneaux : les anneaux principaux.
 \end{definition}
 
 \begin{exemple}
-	
+
 \end{exemple}
 
 \begin{proposition}
-	Soit \GSfunction{f}{A}{B} où A et B sont deux anneaux commutatifs. Alors
+	Soit $\GSfunction{f}{A}{B}$ où $A$ et $B$ sont deux anneaux commutatifs. Alors
 	Im(f) est un sous-anneau de B, et ker(f) est un idéal de A.
 
 	De plus on a :
 	\begin{enumerate}
-		\item Si Im(f) est un idéal, f est surjectif.
-		\item Si Ker(f) est un sous-anneau, B = \GSset{0_{B}}.
+		\item Si $Im(f)$ est un idéal, $f$ est surjectif.
+		\item Si $Ker(f)$ est un sous-anneau, $B = \GSset{0_{B}}$.
 	\end{enumerate}
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	$1$. On doit montrer que$ Im(f) = B$. Comme $f$ morphisme, $1 \in Im(f)$, on a
 	donc que $Im(f) = B$ car $Im(f)$ est un idéal.
-	$2$. 
+	$2$.
 \end{proof}
+\fi
 
 \begin{proposition}
 	Les seuls idéaux d'un corps $\mathbb{K}$ est $(0_{\mathbb{K}})$ où
 	$\mathbb{K}$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Soit $I$ un idéal. S'il est nul, on a fini. Sinon on a un élément non
 	nul $a \in I$. Comme $K$ est un corps, $a^{-1} \in K$, et donc $a^{-1}a = 1
 	\in I$ car $I$ idéal. Donc $I = K$.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $\mathbb{K}$ un corps et L un anneau, et
-	\GSfunction{f}{$\mathbb{K}$}{L} un morphisme d'anneau. Alors soit L est nul,
+	$\GSfunction{f}{\mathbb{K}}{L}$ un morphisme d'anneau. Alors soit L est nul,
 	soit f est injectif.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit I et J deux idéaux d'un anneau commutatifs A tel que $I \subseteq J$.
 	Alors J/I est un idéal de A/I.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \subsection{Anneau euclidien}
 
@@ -130,8 +144,8 @@ anneaux commutatifs, appelé anneau euclidien. Malheureusement, tout anneau
 commutatif n'est pas euclidien.
 
 \begin{definition} [Anneau euclidien]
-	Soit A un anneau. On dit que A est un \textbf{anneau euclidien} si il existe
-	une fonction \GSfunction{N}{A}{$\naturel_{0}$} tel que : $\forall a, b \in
+	Soit $A$ un anneau. On dit que $A$ est un \textbf{anneau euclidien} si il existe
+	une fonction $\GSfunction{N}{A}{\naturel_{0}}$ tel que : $\forall a, b \in
 	A_{0}$, $\exists q, r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r =
 	0.
 	\label{euclidian_ring}
@@ -140,7 +154,7 @@ commutatif n'est pas euclidien.
 \begin{exemple}
 	\begin{enumerate}
 		\item $\integer$ avec la valeur absolue est un anneau euclidien.
-		\item $\integer$[i], les entiers de Gauss, muni de la norme complexe
+		\item $\integer[i]$, les entiers de Gauss, muni de la norme complexe
 			usuelle au carré est un anneau euclidien.
 	\end{enumerate}
 \end{exemple}
@@ -151,22 +165,23 @@ commutatif n'est pas euclidien.
 	\label{euclidian_implies_principal}
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	Prenons un anneau euclidien A, ainsi qu'un idéal I de A. Si I = \GSset{0}
-	ou \GSset{0, 1}, on a fini (\GSset{0} est un idéal engendré par 0, et
-	\GSset{0, 1} = I car $1 \in I$.
+	Prenons un anneau euclidien A, ainsi qu'un idéal I de A. Si I = $\GSset{0}$
+	ou $\GSset{0, 1}$, on a fini ($\GSset{0}$ est un idéal engendré par 0, et
+	$\GSset{0, 1} = I$ car $1 \in I$.
 
 	Sinon, I possède deux éléments x et y non nul. Nous pouvons supposer, sans
 	perte de généralité\footnote{Si y ne vérifie pas la minimalité, on prend z
 	tel que N(z) est minimal, et on remplace dans la preuve x par y et y par
-z.}, que y est tel que N(y) = $\displaystyle min_{a \in I_{0}}$\GSset{N(a)} (en
+z.}, que y est tel que N(y) = $\displaystyle min_{a \in I_{0}} \GSset{N(a)}$ (en
 effet, l'ensemble des N(a) est un sous ensemble de N, donc il possède un
-minimum).
-	On a, comme A est euclidien, qu'il existe q et r appartenant à A tel que $x
+minimum).  On a, comme A est euclidien, qu'il existe q et r appartenant à A tel
+que $x
 	= qy + r$, avec N(r) < N(y) ou r = 0.
 	On a alors $r = x - qy$ avec $x \in I$, $qy \in I$ (comme $q \in A$ et $y
 	\in I$ et I idéal), donc $r \in I$ comme I idéal.
-	
+
 	Or, si $N(r) < N(y)$ avec r non nul, cela contredirait la minimalité de N(y)
 	car $r \in I_{0}$. Donc r est nul.
 
@@ -174,6 +189,7 @@ minimum).
 	éléments quelconques de I, l'un est multiple de l'autre, c'est-à-dire que
 	I est principal.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Les idéaux de $\integer$ (resp $\integer$[i]) sont les n$\integer$ où $n \in
@@ -192,7 +208,7 @@ Par contre, nous avons :
 Nous avons la chaine d'inclusion suivante (non-exhaustive) pour les classes
 d'idéaux :
 \begin{theorem}
-	Corps 
+	Corps
 	$\displaystyle \subsetneq$ Anneaux euclidiens
 	$\displaystyle \subseteq^{\ref{euclidian_implies_principal}}$ Anneaux principaux
 	$\subseteq$ Anneaux factoriels $\subseteq$ Anneaux intègres $\subseteq$
@@ -218,22 +234,26 @@ d'idéaux :
 	irréductible dans $A$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit $f$ un isomorphisme d'anneau. $a$ est irréductible ssi $f(a)$ est
 	irréductible.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{exemple}
 	On a vu que la conjugaison est un automorphisme d'anneau, donc si $z$ est
-	irréductible, $\conjugate{z}$ l'est aussi.
+	irréductible, $\conjuguate{z}$ l'est aussi.
 \end{exemple}
 
 Une remarque importante est que l'irréductibilité d'un élément dépend de l'anneau
@@ -261,9 +281,12 @@ utilisée actuellement, date du début du XXè siècle.
 	$(a) \ne (0)$, $(a)$ maximal parmi les idéaux principaux différents de $A$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Chaque équivalence est une réécriture.
 \end{proof}
+\fi
+
 \section{Théorème chinois}
 
 \subsection{Aspect historique}
@@ -275,11 +298,11 @@ Nous souhaitons, pour deux anneaux donnés, et sous certaines conditions, montre
 que $A/(I \cap J)$ est isomorphe à $A/I \times A/J$.
 
 Soient $I, J$ deux idéaux de $A$. Alors, nous pouvons construire
-\GSfunction{$f$}{$A$}{$A/I \times A/J$} : $a \rightarrow (a + I, a + J)$.
+$\GSfunction{f}{A}{A/I \times A/J}$ : $a \rightarrow (a + I, a + J)$.
 Nous avons $ker(f) = I \cap J$.
 
-On a alors un morphisme injectif \GSfunction{$\overline{f}$}{$A/(I \cap
-J)$}{$A/I \times A/J$} induit par $f$.
+On a alors un morphisme injectif $\GSfunction{\overline{f}}{A/(I \cap
+J)}{A/I \times A/J}$induit par $f$.
 
 Il nous manque donc une condition, la surjectivité, pour avoir un isomorphisme
 entre ces deux anneaux.
@@ -290,9 +313,11 @@ On en vient alors au théorème chinois :
 	J)$ est isomorphe à $A/I \times A/J$.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 On peut généraliser ce théorème à un nombre fini d'idéaux $I_{1}, \ldots,
 I_{n}$.
@@ -304,13 +329,15 @@ avons alors le résultat suivant, dit théorème chinois généralisé.
 \begin{theorem}
 	Si $\forall k \in \left\{1, \ldots, n\right\}$, $I_{k} + \displaystyle
 	\bigcap_{1 = i \ne k}^{n} I_{i} = A$, alors $\overline{f}$ est surjectif, et
-	donc \GSprodSet{i}{1}{n}{A/I} est isomorphe à $\displaystyle A/\bigcap_{i = 1}^{n}
+	donc $\GSprodSet{i}{1}{n}{A/I}$ est isomorphe à $\displaystyle A/\bigcap_{i = 1}^{n}
 	I_{i}$.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \subsection{Interprétation et applications}
 % Interprétation et applications
@@ -323,7 +350,7 @@ On s'en servira dans le chapitre 2.
 
 \begin{definition}
 	L'indicatrice d'Euler, noté souvent $\phi$ est la fonction
-	\GSfunction{$\phi$}{$\naturel$}{$\naturel$} : $n \rightarrow
+	$\GSfunction{\phi}{\naturel}{\naturel}$ : $n \rightarrow
 	|(\integer/n\integer)^{*}|$.
 \end{definition}
 
@@ -354,7 +381,7 @@ nuls sont inversibles.
 \end{definition}
 
 \begin{definition} [Anneau intégre]
-	
+
 \end{definition}
 
 \begin{definition} [Corps]
@@ -365,9 +392,11 @@ nuls sont inversibles.
 	Tout idéal maximal est premier.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit $I$ un idéal d'un anneau commutatif $A$.
@@ -379,9 +408,11 @@ nuls sont inversibles.
 	\end{enumerate}
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{exemple}
 	%Z/nZ
@@ -391,9 +422,12 @@ nuls sont inversibles.
 	Tout idéal est contenu dans un idéal maximal.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
+
 \section{Anneau de polynômes}
 
 \begin{proposition}
@@ -403,19 +437,23 @@ nuls sont inversibles.
 	\end{enumerate}
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Si on prend la fonctions surjective $eval_{0}$, on a un isomorphisme induit
 	entre $A$ et $A[X]/(X)$. Comme $(X)$ est un idéal premier, $A[X]/(X)$ est
 	intègre. Par l'isomorphisme, $A$ est intègre.
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit $K$ un corps, alors $K[X]$ possède une division euclidienne. Par
 	conséquent, $K[X]$ est principal.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit $K$ un corps,
@@ -423,6 +461,7 @@ nuls sont inversibles.
 	\textbf{monique} tel que $I = (P)$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Commençons par l'existence.
 
@@ -431,10 +470,11 @@ nuls sont inversibles.
 	a_{1}X + a_{0}, a_{n} \ne 0$. On a donc $I = (Q)$. Comme $K$ est un corps, on peut
 	définir $a_{n}^{-1}$, et $P(X) = a_{n}^{-1}Q(X) \in I$. Celui-ci est
 	monique, et on a de plus que $(P) = (Q) = I$ car $P$ et $Q$ sont copremiers.
-	
+
 	Supposons maintenant qu'il existe un autre polynôme monique $S(X)$
 	engendrant $I$. (A finir).
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit $K$ un corps, $P \in K[X]$.
@@ -445,9 +485,11 @@ nuls sont inversibles.
 	\end{enumerate}
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 On a alors comme corollaire :
 
@@ -459,18 +501,21 @@ On a alors comme corollaire :
 	\end{enumerate}
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{proposition}
 	Soit $K[X]$ où $K$ est un corps. Soit $P \in K[X]$.
-	
+
 	Si $P$ est de degré $1$, alors $P$ est irréductible.
-	
+
 	De plus, si $K$ est algébriquement clos et $P$ irréductible, alors $P$ est
 	de degré $1$.
 \end{proposition}
+
 \subsection{Polynômes à coefficients dans $\integer[X]$}
 
 Dans cette partie nous allons étudier les propriétés que les polynômes à
@@ -507,9 +552,11 @@ Nous avons tout de même, sous certaines hypothèses, que l'implication est vrai
 	irréductible dans $\integer[X]$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 \begin{theorem} [Critère Eisenstein\footnote{Ferdinand \textbf{Gotthold} Max
 		\textbf{Eisenstein} : 16 avril 1823 (Berlin) - 11 octobre 1862 (Berlin).
@@ -527,9 +574,11 @@ Mathématicien allemand d'origine juive. Mort de tuberculose. Élève de Dirichl
 	Alors, $P(X)$ est irréductible dans $\rational[X]$.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 
 Nous avons également un théorème qui permet de déterminer l'irréductibilité d'un
 polynôme. Celui-ci se sert du corps $\integer/p\integer$ où p est premier.
@@ -541,9 +590,11 @@ polynôme. Celui-ci se sert du corps $\integer/p\integer$ où p est premier.
 	$\integer/p\integer[X]$, alors $P(X)$ est irréductible dans $\rational[X]$.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
 %exemple
 
 \begin{corollary}
@@ -551,9 +602,12 @@ polynôme. Celui-ci se sert du corps $\integer/p\integer$ où p est premier.
 	est irréductible dans $Q[X]$ (et dans $\integer[X]$) quand p est premier.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
+\fi
+
 \subsection{Polynômes cyclotomiques}
 
 Nous allons maintenant étudier certains polynômes appelés polynômes
