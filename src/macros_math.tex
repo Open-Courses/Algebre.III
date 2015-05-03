@@ -26,6 +26,17 @@
 %-------------------------------------------------------------------------------
 
 %Algebra
+
+% Group theory
+
+\newcommand{\ordergroup}[1]{|#1|}
+\newcommand{\GSautomorphismDef}[2]{Aut_{\text{#1}}(#2)}
+
+% Field theory
+
+%extensionDegree
+\newcommand{\extensionDegree}[2]{[#1, #2]}
+
 % Spectrum Theory
 \newcommand{\spectrum}[1]{\sigma(#1)}
 \newcommand{\resolvant}[1]{\rho(#1)}
@@ -39,9 +50,11 @@
 %		#3 : set definition
 \newcommand{\GSsequence}[3]{(#1_{#2})_{#2 \in #3}}
 
-\newcommand{\GSset}[1]{\left\{#1 \right\}}
+%GSsetDef :
+%		#1 : set elements
+\newcommand{\GSset}[1]{\left\{ #1 \right\}}
 
-%GSset :
+%GSsetDef :
 %		#1 : global set
 %		#2 : condition
 \newcommand{\GSsetDef}[2]{\left\{#1 \, | \, #2 \right\}}
@@ -61,8 +74,6 @@
 \newcommand{\GSsum}[4]{\displaystyle \sum_{#1 = #2}^{#3} #4}
 
 \newcommand{\GSintervalCC}[2]{\left[#1, #2\right]}
-
-\newcommand{\extensionDegree}[2]{[#1 : #2]}
 %-------------------------------------------------------------------------------
 
 %Analysis :
@@ -127,8 +138,6 @@
 \newcommand{\GSisomorphism}[1]{Isom(#1)}
 \newcommand{\GSisomorphismHomo}[2]{Isom(#1, #2)}
 \newcommand{\GSisometryEndo}[1]{Isom(#1)}
-
-\newcommand{\GSautomorphismDef}[2]{Aut_{\text{#1}}(#2)}
 %-------------------------------------------------------------------------------
 
 %Model theory

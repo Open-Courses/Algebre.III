@@ -1,8 +1,179 @@
 \chapter{Anneaux}
 
-\section{Théorie générale}
+\section{Rappels sur les anneaux commutatifs}
 
-\subsection{Morphisme d'anneaux}
+\begin{definition}
+	Un anneau commutatif est un groupe abélien $(A, +)$ muni d'une application:
+
+	\begin{equation*}
+		A \cartprod A \rightarrow A : (a, b) \rightarrow a.b = ab
+	\end{equation*}
+
+	tel que:
+
+	\begin{itemize}
+		\item $\forall a, b, c \in A$, $(ab)c = a(bc)$.
+		\item $\exists 1_{A} \in A$, $\forall a \in A$, $1_{A} a = a 1_{A} = a$.
+		\item $\forall a, b \in A$, $ab = ba$ (commutativité).
+		\item $\forall a, b, c \in A$, $a(b + c) = ab + ac$. (distributivité).
+	\end{itemize}
+\end{definition}
+
+\begin{exemple}
+	$\integer$, $\real$, $\rational$, $\complex$, $\integer[X]$, $\real[X]$,
+	$\mathbb{F}_{p} = \integer/p\integer$.
+\end{exemple}
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif. Alors $A[X]$ est un anneau commutatif.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{remarque}
+	$(A[X])[Y] = A[X, Y]$, ie les polynomes à deux variables sont les polynomes
+	construit sur un anneau de polynomes.
+\end{remarque}
+
+\begin{proposition}
+	Soient $A$ et $B$ deux anneaux commutatifs. Alors $A \cartprod B$ est un
+	anneau commutatif (avec la multiplication composante par composante).
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $\GSsequence{A}{i}{I}$ une famille d'anneaux commutatifs. Alors
+	$\displaystyle \prod_{i \in I} A_{i}$ est un anneau commutatif.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	$\rational^{\naturel}$ est un anneau commutatif.
+\end{exemple}
+
+\begin{remarque}
+	\begin{itemize}
+		\item $1_{A}$ est unique.
+		\item $\forall a \in A$, $0_{A} a = 0_{A} = a 0_{A}$.
+		\item $-1_{A} a = -a$.
+		\item $0_{A} = 1_{A} \equiv A = \GSset{0_{A}}$.
+		\item Si on enlève la distributivité à gauche dans la définition, alors
+			on obtient la définition d'un anneau. Exemple : $M_{n}(\real)$,
+			$M_{n}(\complex)$, $\GSendomorphism{G}$ ($G$ groupe abélien).
+	\end{itemize}
+\end{remarque}
+
+\begin{definition}
+	On définit $A^{\cartprod}$ comme l'ensemble des inversibles de $A$, c'est-à-dire
+	que:
+
+	\begin{equation*}
+		A^{\cartprod} = \GSsetDef{a \in A}{\exists b \in A, ab = ba = 1_{A}}
+	\end{equation*}
+\end{definition}
+
+\begin{remarque}
+	Si $(A, .)$ est un monoïde, alors $(A^{\cartprod}, .)$ est un groupe
+	abélien.
+\end{remarque}
+
+\begin{exemple}
+	$\integer^{\cartprod} = \GSset{1, -1}$, $\rational^{\cartprod} = \rational
+	\textbackslash \GSset{0}$, $\real^{\cartprod} = \real \textbackslash
+	\GSset{0}$, $\real[X]^{\cartprod} = \real^{\cartprod}$,
+	$\integer[X]^{\cartprod} = \integer^{\cartprod}$.
+\end{exemple}
+
+\begin{definition}
+	\textbf{Un corps} est un anneau non nul tel que $A^{\cartprod} = A
+	\textbackslash \GSset{0_{A}}$.
+\end{definition}
+
+\begin{definition}
+	\textbf{Un sous-anneau} $B$ de $A$ est un sous-groupe $(B, +)$ tel que
+	$1_{A} \in B$ et $\forall a, b \in B$, $ab \in B$.
+\end{definition}
+
+
+\begin{proposition}
+	Soient $B$ et $C$ deux sous-anneaux de $A$, alors $B \inter C$ est un
+	sous-anneau de $A$. La propriété reste vraie pour une intersectionq
+	quelconque.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $B$ sous-anneau de $A$, alors $B^{\cartprod}$ sous-anneau de
+	$A^{\cartprod}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	$\integer[i] = \GSsetDef{a + bi}{a, b \in \integer}$ est l'ensemble des
+	entiers de Gauss.
+\end{definition}
+
+\begin{proposition}
+	$\integer[i]$ est un sous-anneau de $\complex$, dont les élements
+	inversibles sont $1, -1, i, -i$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	$\rational[i] = \GSsetDef{a + bi}{a, b \in \rational}$ est un sous-corps de
+	$\complex$ contenant $\rational$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	\textbf{Un morphisme d'anneau} $f$ entre deux anneaux $A$ et $B$ est un
+	morphisme de groupe tel que $f(ab) = f(a) f(b)$ et $f(1_{A}) = 1_{B}$.
+
+	C'est \textbf{un endormorphisme} si $A = B$, \textbf{un isomorphisme} si $f$
+	est bijectif, \textbf{un automorphisme} si $f$ est un isomorphisme et un
+	endormorphisme. Un morphisme d'anneau entre deux corps est \textbf{un
+	morphisme de corps}.
+\end{definition}
+
+\begin{remarque}
+	Si $\GSfunction{f}{A}{B}$ est un morphisme d'anneau, alors $f(A^{\cartprod})
+	\subseteq B^{\cartprod}$.
+\end{remarque}
+
 \begin{proposition}
 	Il existe un unique morphisme d'anneau entre $\rational$ (resp $\integer$)
 	et $\complex$.
@@ -58,28 +229,46 @@
 	réelle et partie imaginaire).
 \end{question}
 
-\subsection{Idéaux}
+\begin{proposition}
+	Soient $A, B, C$ trois anneaux.
+	Soient $\GSfunction{f}{A}{B}$ et $\GSfunction{g}{B}{C}$ deux morphismes
+	d'anneaux. Alors $g \circ f : A \rightarrow C$ est un morphisme d'anneau.
+\end{proposition}
 
-\begin{definition} [Idéal]
+\ifdefined\outputproof
+\begin{proof}
 
-	\label{ideal}
-\end{definition}
+\end{proof}
+\fi
 
-\begin{definition} [Idéal principal]
-	Un idéal $I$ est un \textbf{idéal principal} si il est engendré par un seul
-	élément. On note, si $a \in A$ engendre $I$, $I = (a)$.
-	\label{principal_ideal}
-\end{definition}
+\begin{proposition}
+	\begin{itemize}
+		\item $\GSfunction{f}{A}{B}$ isomorphisme d'anneau $\implies
+			\GSfunction{f^{-1}}{B}{A}$ isomorphisme d'anneau.
+		\item $\GSfunction{Id_{A}}{A}{A} : a \rightarrow a$ est un isomorphisme
+			d'anneau.
+		\item $(\GSautomorphismDef{anneau}{A}, \circ)$ est un groupe.
+		\item Si $A$ est un corps, $\GSautomorphismDef{anneau}{A} =
+			\GSautomorphismDef{corps}{A}$.
+		\item Si $\GSfunction{f}{A}{B}$ est un morphisme d'anneau, alors
+			$Im(f)$ est un sous-anneau de $B$ et $\ker(f)$ est un sous-groupe de
+			$A$.
+	\end{itemize}
+\end{proposition}
 
-Nous pouvons alors créer une classe d'anneaux : les anneaux principaux.
+\ifdefined\outputproof
+\begin{proof}
 
-\begin{definition} [Anneau principal]
-	Un anneau $A$ est un \textbf{anneau principal} si tout idéal est principal.
-	\label{principal_ring}
+\end{proof}
+\fi
+
+\begin{definition}
+	Soit $A$ un anneau. \textbf{Un idéal de $A$} est un sous-groupe $(I, +)$ de
+	$(A, +)$ tel que $\forall a \in I$, $\forall b \in A$, $ab \in I$.
 \end{definition}
 
 \begin{exemple}
-
+	-- $\GSset{0_{A}}$ et $A$ sont des idéaux de $A$.
 \end{exemple}
 
 \begin{proposition}
@@ -98,6 +287,95 @@ Nous pouvons alors créer une classe d'anneaux : les anneaux principaux.
 	$1$. On doit montrer que$ Im(f) = B$. Comme $f$ morphisme, $1 \in Im(f)$, on a
 	donc que $Im(f) = B$ car $Im(f)$ est un idéal.
 	$2$.
+\end{proof}
+\fi
+
+\begin{proposition}
+	Les idéaux de $\integer$ sont les $\integer/n\integer$. Les idéaux de
+	$\integer$ sont donc confondus avec les sous-groupes de $(\integer, +)$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition} [Idéal principal]
+	\label{def:principal_ideal}
+	Un idéal $I$ est un \textbf{idéal principal} si il est engendré par un seul
+	élément. On note, si $a \in A$ engendre $I$, $I = (a)$.
+\end{definition}
+
+\begin{definition} [Anneau principal]
+	Un anneau $A$ est un \textbf{anneau principal} si tout idéal est principal.
+	\label{principal_ring}
+\end{definition}
+
+\begin{exemple}
+	\begin{itemize}
+		\item $\GSset{0_{A}} = (0_{A})$, $A = (1_{A})$
+		\item $(2)_{\integer} = 2\integer \neq \integer$.
+		\item $(2)_{\rational} = 2\rational = \rational$.
+		\item $I = \GSsetDef{2 P(X) + X Q(X)}{P, Q \in \integer[X]}$ est un
+			idéal de $\integer[X]$ non principal.
+	\end{itemize}
+\end{exemple}
+
+\begin{definition}
+	Soit $A$ un anneau. Soient $a, b \in A$. On dit que \textbf{$a$ divise $b$}
+	s'il existe $n \in \integer$ tel que $b = na$.
+\end{definition}
+
+\begin{proposition}
+	$a$ divise $b$ $\equiv (b) \subseteq (a)$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	Soit $n, m \in \integer$. Alors $n | m \equiv \integer/m\integer \subseteq
+	\integer/n\integer$.
+\end{exemple}
+
+\begin{proposition}
+	Soient $I, J$ deux idéaux d'un anneau $A$. Alors $I \inter J$ est le plus
+	grand idéal de $A$ contenu dans $I$ et $J$, et $I + J$ est le plus petit
+	idéal contenant $I$ et $J$ (en particulier, c'est le plus petit sous-groupe
+	contenant $I$ et $J$).
+
+	Nous pouvons généraliser à un nombre quelconque d'idéaux.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Si $n, m \in \integer \textbackslash \GSset{0}$, alors $n\integer \inter
+	m\integer = ppcm(n, m)\integer$ et $n\integer + m\integer = pgcd(n, m)$
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $I$ un idéal de $A$. Alors, $I = A \equiv I \inter A^{\cartprod} \neq
+	\emptyset \equiv 1_{A} \in I$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
 \end{proof}
 \fi
 
@@ -125,6 +403,242 @@ Nous pouvons alors créer une classe d'anneaux : les anneaux principaux.
 
 \end{proof}
 \fi
+
+% Quotients
+
+\section{Morphismes fondamentaux}
+
+\subsection{Caractéristique d'un anneau}
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif. Il existe un unique morphisme d'anneau
+	$\GSfunction{\mu_{A}}{\integer}{A} : n \integer n 1_{A}$ et $\exists c_{A} \in
+	\naturel$ tel que $\ker{\mu_{A}} = c_{A} \integer$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	$c_{A}$ est appelé \textbf{la caractéristique de $A$}.
+\end{definition}
+
+\begin{exemple}
+	La caractéristique de $\integer/4\integer \cartprod \integer/6\integer$ vaut
+	$12$.
+\end{exemple}
+
+\subsection{Anneau de polynomes}
+
+\begin{proposition}
+	Soit $\GSfunction{f}{A}{B}$ un morphisme d'anneaux. Alors
+	$\GSfunction{\tilde{f}}{A[X]}{B[X]} : P(X) = \sum_{i = 1}^{k} a_{k} X^{k}
+	\rightarrow \sum_{i = 1}^{k} f(a_{k}) X^{k}$ est un morphisme d'anneaux. De
+	plus, $\tilde{f}_{|A} = f$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+% Exemples Page 7
+
+\subsection{Le corps des réels}
+
+\begin{proposition}
+	Soit $\mathcal{C}(\rational) =
+	\GSsetDef{\GSsequence{a}{n}{\naturel}}{a_{n} \text{ est une suite de Cauchy}}$.
+	Alors $\mathcal{C}(\rational)$ est un sous-anneau de $\rational^{\naturel}$
+\end{proposition}
+
+\begin{definition}
+	$\mathcal{C}_{0}(\rational) = \GSsetDef{\GSsequence{a}{n}{\naturel}}{lim
+		a_{n} = 0}$
+\end{definition}
+
+\begin{proposition}
+	$\mathcal{C}_{0}(\rational)$ est un idéal de $\rational^{\naturel}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	$\real = \rational^{\naturel} / \mathcal{C}_{0}(\rational)$
+\end{definition}
+
+\subsection{Evaluation interne}
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif. Soit $a \in A$.
+
+	Alors $\GSfunction{eval_{a}}{A[X]}{A} : P(X) \rightarrow P(a)$ est un
+	morphisme d'anneau surjectif et ${(eval_{a})}_{|A} = Id_{A}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Pour tout $a \in A$, $\GSfunction{\tau_{a}}{A[X]}{A[X]} : P(X) \rightarrow
+	P(X - a)$, est un automorphisme d'anneau avec $(\tau_{a})^{-1} =
+	\tau_{-a}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Pour tout $a \in A$, $eval_{a} \circ \tau_{a} = eval_{0}$
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	$\ker(eval_{a}) = \tau_{a}(\ker{eval_{0}}) = (X - a)$
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	$A[X] / (X - a) \rightarrow A : P(X) mod(X - a) \rightarrow P(a)$ est un
+	isomorphisme d'anneau.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\subsection{Evaluation externe}
+
+\begin{proposition}
+	Soient $A$ et $B$ deux anneaux commutatifs tel que $A$ est un sous-anneau de
+	$B$. Alors, $\forall b \in B$, $eval_{b} : A[X] \rightarrow B : P(X)
+	\rightarrow P(b)$ est un morphisme d'anneau tel que ${(eval_{b})}_{|A}$ est
+	l'inclusion de $A$ dans $B$. De plus, $Im(eval_{b}) = A[b] = $ le plus petit
+	sous-anneau de $B$ contenant $A$ et $b$. % noyau ?
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+%exemple
+
+\section{Théorème chinois}
+
+\subsection{Aspect historique}
+% Aspect historique
+
+\subsection{Énoncé}
+% Théorème + preuve
+Nous souhaitons, pour deux anneaux donnés, et sous certaines conditions, montrer
+que $A/(I \cap J)$ est isomorphe à $A/I \times A/J$.
+
+Soient $I, J$ deux idéaux de $A$. Alors, nous pouvons construire
+$\GSfunction{f}{A}{A/I \times A/J}$ : $a \rightarrow (a + I, a + J)$.
+Nous avons $ker(f) = I \cap J$.
+
+On a alors un morphisme injectif $\GSfunction{\overline{f}}{A/(I \cap
+J)}{A/I \times A/J}$induit par $f$.
+
+Il nous manque donc une condition, la surjectivité, pour avoir un isomorphisme
+entre ces deux anneaux.
+On en vient alors au théorème chinois :
+
+\begin{theorem}
+	Si $I + J = A$, alors $\overline{f}$ est surjectif, et donc $A/(I \cap
+	J)$ est isomorphe à $A/I \times A/J$.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+On peut généraliser ce théorème à un nombre fini d'idéaux $I_{1}, \ldots,
+I_{n}$.
+
+On construit comme précédemment $f$, et on déduit un morphisme injectif
+$\overline{f}$. Il suffit de trouver une condition pour que $\overline{f}$. Nous
+avons alors le résultat suivant, dit théorème chinois généralisé.
+
+\begin{theorem}
+	Si $\forall k \in \left\{1, \ldots, n\right\}$, $I_{k} + \displaystyle
+	\bigcap_{1 = i \ne k}^{n} I_{i} = A$, alors $\overline{f}$ est surjectif, et
+	donc $\GSprodSet{i}{1}{n}{A/I}$ est isomorphe à $\displaystyle A/\bigcap_{i = 1}^{n}
+	I_{i}$.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\subsection{Interprétation et applications}
+% Interprétation et applications
+
+Le théorème chinois généralisé a une application en théorie des polynômes, dont
+la théorie des anneaux de polynôme sera un peu étudiée au chapitre 2.
+Nous allons maintenant définir l'indicatrice d'Euler, et en donner quelques
+propriétés.
+On s'en servira dans le chapitre 2.
+
+\begin{definition}
+	L'indicatrice d'Euler, noté souvent $\phi$ est la fonction
+	$\GSfunction{\phi}{\naturel}{\naturel}$ : $n \rightarrow
+	|(\integer/n\integer)^{*}|$.
+\end{definition}
+
+L'indicatrice d'Euler donne donc, pour chaque $n \in \naturel$, le nombre
+d'élément inversible de $\integer/n\integer$.
+On obtient directement une première propriété : $\phi(p) = p - 1$ où $p$ est
+premier. En effet $\integer/p\integer$ est un corps, donc tous les éléments non
+nuls sont inversibles.
+
+%	Indicatrice d'Euler
+%		Définition
+%		Propriété
+%		Calcul
+
+
+
+\subsection{Idéaux}
+
+Nous pouvons alors créer une classe d'anneaux : les anneaux principaux.
+
+
+\begin{exemple}
+
+\end{exemple}
 
 \begin{proposition}
 	Soit I et J deux idéaux d'un anneau commutatifs A tel que $I \subseteq J$.
@@ -287,90 +801,9 @@ utilisée actuellement, date du début du XXè siècle.
 \end{proof}
 \fi
 
-\section{Théorème chinois}
-
-\subsection{Aspect historique}
-% Aspect historique
-
-\subsection{Énoncé}
-% Théorème + preuve
-Nous souhaitons, pour deux anneaux donnés, et sous certaines conditions, montrer
-que $A/(I \cap J)$ est isomorphe à $A/I \times A/J$.
-
-Soient $I, J$ deux idéaux de $A$. Alors, nous pouvons construire
-$\GSfunction{f}{A}{A/I \times A/J}$ : $a \rightarrow (a + I, a + J)$.
-Nous avons $ker(f) = I \cap J$.
-
-On a alors un morphisme injectif $\GSfunction{\overline{f}}{A/(I \cap
-J)}{A/I \times A/J}$induit par $f$.
-
-Il nous manque donc une condition, la surjectivité, pour avoir un isomorphisme
-entre ces deux anneaux.
-On en vient alors au théorème chinois :
-
-\begin{theorem}
-	Si $I + J = A$, alors $\overline{f}$ est surjectif, et donc $A/(I \cap
-	J)$ est isomorphe à $A/I \times A/J$.
-\end{theorem}
-
-\ifdefined\outputproof
-\begin{proof}
-
-\end{proof}
-\fi
-
-On peut généraliser ce théorème à un nombre fini d'idéaux $I_{1}, \ldots,
-I_{n}$.
-
-On construit comme précédemment $f$, et on déduit un morphisme injectif
-$\overline{f}$. Il suffit de trouver une condition pour que $\overline{f}$. Nous
-avons alors le résultat suivant, dit théorème chinois généralisé.
-
-\begin{theorem}
-	Si $\forall k \in \left\{1, \ldots, n\right\}$, $I_{k} + \displaystyle
-	\bigcap_{1 = i \ne k}^{n} I_{i} = A$, alors $\overline{f}$ est surjectif, et
-	donc $\GSprodSet{i}{1}{n}{A/I}$ est isomorphe à $\displaystyle A/\bigcap_{i = 1}^{n}
-	I_{i}$.
-\end{theorem}
-
-\ifdefined\outputproof
-\begin{proof}
-
-\end{proof}
-\fi
-
-\subsection{Interprétation et applications}
-% Interprétation et applications
-
-Le théorème chinois généralisé a une application en théorie des polynômes, dont
-la théorie des anneaux de polynôme sera un peu étudiée au chapitre 2.
-Nous allons maintenant définir l'indicatrice d'Euler, et en donner quelques
-propriétés.
-On s'en servira dans le chapitre 2.
-
-\begin{definition}
-	L'indicatrice d'Euler, noté souvent $\phi$ est la fonction
-	$\GSfunction{\phi}{\naturel}{\naturel}$ : $n \rightarrow
-	|(\integer/n\integer)^{*}|$.
-\end{definition}
-
-L'indicatrice d'Euler donne donc, pour chaque $n \in \naturel$, le nombre
-d'élément inversible de $\integer/n\integer$.
-On obtient directement une première propriété : $\phi(p) = p - 1$ où $p$ est
-premier. En effet $\integer/p\integer$ est un corps, donc tous les éléments non
-nuls sont inversibles.
-
-%	Indicatrice d'Euler
-%		Définition
-%		Propriété
-%		Calcul
 
 
-\section{Classification partielle des idéaux}
-
-% Changer le titre ?
-% Il en existe d'autre ?
-% Peut-on vraiment tous les classer ?
+\section{Arithmétique des anneaux}
 
 \begin{definition} [Idéal premier]
 
@@ -427,6 +860,9 @@ nuls sont inversibles.
 
 \end{proof}
 \fi
+
+
+\section{Irréductibilité dans $\rational[X]$}
 
 \section{Anneau de polynômes}
 

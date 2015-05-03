@@ -72,22 +72,49 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 \end{exercice}
 
 \begin{definition}
-	Soient $L/K$ et $M/K$ deux extensions de corps. Alors on définit:
-	% Definition de L \inter M
-	% Definition de LM
+	Soient $L/K$ et $M/K$ deux extensions de corps tel que $L \subseteq E$ et $M
+	.\subseteq E$. Alors on définit:
+
+	\begin{itemize}
+		\item $LM = \displaystyle \bigcap_{\substack{F \subseteq E
+				\text{sous-corps} \\ M \subseteq F \\ L \subseteq F}}
+	F$. C'est la plus grande extension de $K$ contenant $L$ et $M$.
+		\item $L \inter M$ est la plus grande extension de $K$ contenue dans $L$
+			et $M$. De manière générale, on peut étudier une intersection
+			quelconque d'extension.
+	\end{itemize}
 \end{definition}
+
+\begin{exercice}
+	Si $pgcd(\extensionDegree{L}{K}, \extensionDegree{M}{K}) = 1$. Alors $L
+	\inter M = K$.
+\end{exercice}
 
 \begin{definition}
 	Soit $L/K$ une extension de corps. Soit $S \subseteq L$ (sans nécessairement
 	de structures).
 
-	On définit $K(S)$ par \ldots.
+	On définit $K(S)$ par:
+
+	\begin{equation*}
+		K(S) = \displaystyle \bigcap_{\substack{K \subseteq F \subseteq L
+			\text{corps} \\ S \subseteq F}} F
+	\end{equation*}
+
+	En particulier, quand $S = \GSset{\alpha_{1}, \cdots, \alpha_{n}}$, on note
+	$K(S)$ par $K(\alpha_{1}, \cdots, \alpha_{n})$.
 \end{definition}
 
 \begin{proposition}
 	Soit $L/K$ une extension de corps. Soit $\alpha$, $\beta \in L$.
 	Alors $K(\alpha, \beta) = K(\alpha)K(\beta)$.
 \end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
 
 Prenons $\alpha \in L$ qui est algébrique sur $K$, et construisons le morphisme
 d'évaluation $eval_{\alpha, K} : K[X] \rightarrow L : P(X) \rightarrow P(\alpha)$
@@ -109,9 +136,15 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 	Soit $\alpha \in L$ algèbrique sur $K$. Alors $K[\alpha]$ est un corps.
 \end{proposition}
 
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
 \begin{definition} [Polynome minimal]
-	Soit $\alpha \in L$ algébrique sur $K$. Le polynome minimal de $\alpha$ sur
-	$K$ est l'unique $P_{\alpha, K} \in K[X]$ monique tel que $\ker{(eval_{\alpha,
+	Soit $\alpha \in L$ algébrique sur $K$. \textbf{Le polynome minimal de $\alpha$ sur
+	$K$} est l'unique $P_{\alpha, K} \in K[X]$ monique tel que $\ker{(eval_{\alpha,
 	K})} = (P_{\alpha, K})$. En particulier, $P_{\alpha, K}$ est irréductible
 	sur $K$.
 \end{definition}
@@ -125,10 +158,22 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 	deg(P_{\alpha, K})$.
 \end{proposition}
 
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
 \begin{corollary}
 	Soit $L/K$ une extension de corps, et soit $\alpha \in L$. Alors
 	$K(\alpha)/K$ est finie ssi $\alpha$ est algébrique sur $K$.
 \end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
 
 \section{Extension algébrique}
 
@@ -153,9 +198,21 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 	algébrique ssi $M/L$ et $L/K$ sont des extensions algébriques.
 \end{proposition}
 
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
 \begin{proposition}
 	Soit $L/K$ une extension finie. Alors $L/K$ est une extension algébrique.
 \end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
 
 \begin{remarque}
 	La réciproque est fausse.
@@ -167,11 +224,23 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 	\alpha_{n})$.
 \end{proposition}
 
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
 \begin{proposition}
 	Soit $L/K$ une extension de corps.
 	Soit $F$ l'ensemble des éléments de $L$ algébrique sur $K$.
 	Alors $F$ est un sous corps de $L$ contenant $K$.
 \end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
 
 \begin{definition}
 	On appelle $F$, défini précédemment, \textbf{la cloture algébrique de $K$
@@ -179,13 +248,81 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 	On note habituellement $F$ par $\overline{K}$.
 \end{definition}
 
-Remarquons qu'a priori la cloture algébrique est dépendante d'une extension de corps. On
-montrera par après que 
+Remarquons qu'a priori la cloture algébrique est dépendante d'une extension de
+corps. On montrera par après que
+
 \begin{theorem}
 	Soit $K$ un corps. Alors il existe un corps algébriquement clos $\Omega$
 	contenant $K$.
 \end{theorem}
 
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{lemma}
+	Soit $L/K$ une extension de corps. Soient $\Omega$ algébriquement clos, et
+	$\GSfunction{\sigma}{K}{\Omega}$ le morphisme d'inclusion.
+
+	Soit $\alpha \in L$ algébrique sur $K$.
+
+	Alors il existe un plongement $\GSfunction{\tau}{K(\alpha)}{\Omega}$ tel que
+	$\tau_{|K} = \sigma$.
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{theorem} [Extension des plongements]
+	Soit $L/K$ algébrique.
+	Soient $\Omega$ algébriquement clos et $\GSfunction{\sigma}{K}{\Omega}$ le
+	morphisme d'inclusion.
+	Alors il existe $\GSfunction{\tau}{L}{\Omega}$ plongement tel que $\tau_{|K}
+	= \sigma$.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soient $K$ corps, $\Omega_{1}$ et $\Omega_{2}$ algébriquement clos contenant
+	$K$.
+
+	Soit $F_{1}$ (resp. $F_{2}$) la cloture algébrique de $K$ dans $\Omega_{1}$
+	(resp. dans $\Omega_{2}$).
+
+	Alors il existe un isomorphisme $K$-linéaire entre $F_{1}$ et
+	$F_{2}$. En d'autres termes, $F_{1}$ et $F_{2}$ sont isomorphes.
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+On en conclut que si on veut étudier les extensions algébriques de $K$, il
+suffit de choisir un corps algébriquement clos $\Omega$ contenant $K$, et
+d'étudier $\overline{K}$, la cloture algébrique de $K$ dans $\Omega$.
+
 \section{$K$-plongement}
+
+Soit $K$ un corps de caractéristique nulle.
+
+Fixons une cloture algébrique $\overline{K}$ de $K$.
+
+\begin{definition}
+	Soit $L/K$ algébrique.
+	\textbf{Un $K$-plongement} est un morphisme de corps
+	$\GSfunction{\sigma}{L}{\overline{K}}$ $K$-linéaire.
+\end{definition}
 
 \section{Groupe de Galois en caractéristique nulle}
