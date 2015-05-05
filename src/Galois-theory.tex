@@ -64,7 +64,8 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 	Soit $K \subseteq L \subseteq M$. Alors $\extensionDegree{L}{K} /
 	\extensionDegree{M}{K}$ et $\extensionDegree{M}{L} /
 	\extensionDegree{M}{K}$. En particulier, si $\extensionDegree{M}{K}$ est un
-	nombre premier, alors il n'existe pas de corps strictement entre $K$ et $M$.
+	nombre premier, alors il n'existe pas de corps strictement compris entre $K$
+	et $M$.
 \end{remarque}
 
 \begin{exercice}
@@ -73,7 +74,7 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 
 \begin{definition}
 	Soient $L/K$ et $M/K$ deux extensions de corps tel que $L \subseteq E$ et $M
-	.\subseteq E$. Alors on définit:
+	\subseteq E$ où $E$ est un corps. Alors on définit:
 
 	\begin{itemize}
 		\item $LM = \displaystyle \bigcap_{\substack{F \subseteq E
@@ -91,8 +92,8 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 \end{exercice}
 
 \begin{definition}
-	Soit $L/K$ une extension de corps. Soit $S \subseteq L$ (sans nécessairement
-	de structures).
+	Soit $L/K$ une extension de corps. Soit $S$ un sous-ensemble de $L$ (sans
+	nécessairement de structures).
 
 	On définit $K(S)$ par:
 
@@ -249,7 +250,9 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 \end{definition}
 
 Remarquons qu'a priori la cloture algébrique est dépendante d'une extension de
-corps. On montrera par après que
+corps. On montrera par après qu'en réalité, si on prend deux clotures
+algébriques, les théories sur celles-ci sont les mêmes. On pourra donc choisir
+notre cloture algébrique 'préférée'.
 
 \begin{theorem}
 	Soit $K$ un corps. Alors il existe un corps algébriquement clos $\Omega$
@@ -263,7 +266,8 @@ corps. On montrera par après que
 \fi
 
 \begin{lemma}
-	Soit $L/K$ une extension de corps. Soient $\Omega$ algébriquement clos, et
+	Soit $L/K$ une extension de corps. Soient $\Omega$ algébriquement clos
+	contenant $K$, et
 	$\GSfunction{\sigma}{K}{\Omega}$ le morphisme d'inclusion.
 
 	Soit $\alpha \in L$ algébrique sur $K$.
@@ -280,7 +284,7 @@ corps. On montrera par après que
 
 \begin{theorem} [Extension des plongements]
 	Soit $L/K$ algébrique.
-	Soient $\Omega$ algébriquement clos et $\GSfunction{\sigma}{K}{\Omega}$ le
+	Soient $\Omega$ algébriquement clos contenant $K$ et $\GSfunction{\sigma}{K}{\Omega}$ le
 	morphisme d'inclusion.
 	Alors il existe $\GSfunction{\tau}{L}{\Omega}$ plongement tel que $\tau_{|K}
 	= \sigma$.
@@ -311,11 +315,13 @@ corps. On montrera par après que
 
 On en conclut que si on veut étudier les extensions algébriques de $K$, il
 suffit de choisir un corps algébriquement clos $\Omega$ contenant $K$, et
-d'étudier $\overline{K}$, la cloture algébrique de $K$ dans $\Omega$.
+d'étudier $\overline{K}$, la cloture algébrique de $K$ dans $\Omega$. Par la
+suite, nous dirons que nous prenons une cloture algébrique de $K$.
 
 \section{$K$-plongement}
 
-Soit $K$ un corps de caractéristique nulle.
+Soit $K$ un corps de caractéristique nulle (voir
+\ref{subsection:ring_caracteristic}).
 
 Fixons une cloture algébrique $\overline{K}$ de $K$.
 
@@ -325,4 +331,240 @@ Fixons une cloture algébrique $\overline{K}$ de $K$.
 	$\GSfunction{\sigma}{L}{\overline{K}}$ $K$-linéaire.
 \end{definition}
 
+Remarquons que nous avons $L \subseteq \overline{K}$ car $L$ algébrique, et
+$\overline{K}$ contient tous les éléments algébriques sur $K$.
+
+Un $K$-plongement de corps $\GSfunction{\sigma}{L}{\overline{K}}$ est un
+$K$-plongement ssi $\sigma$ fixe tous les éléments $a$ de $K$, ie $\sigma{a} =
+a$.
+On a donc $\sigma_{|K} : K \rightarrow \overline{K}$ qui est le morphisme
+d'inclusion de $K$ dans $\overline{K}$.
+
+Rappelons que si $\alpha$ est algébrique, alors $K(\alpha)$ est un corps
+contenant $K$.
+
+\begin{proposition}
+	Soient $\alpha \in \overline{K}$, et
+	$\GSfunction{\sigma}{K(\alpha)}{\overline{K}}$.
+
+	Alors $\sigma(P(\alpha)) = P(\sigma(\alpha))$
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+En conclusion, un $K$-plongement de $K(\alpha)$ dans $\overline{K}$ est
+uniquement déterminé par l'image de $\alpha$.
+
+Par un même raisonnement, si on prend $\alpha_{1}, \cdots, \alpha_{n}$ et un
+$K$-plongement de $K(\alpha_{1}, \cdots, \alpha_{n})$ dans $\overline{K}$, alors
+il suffit de connaitre les $\sigma(\alpha_{i})$ pour $1 \leq i \leq n$.
+
+Prenons maintenant le cas du polynome minimal $P_{\alpha, K}$.
+On a, par définition, $P_{\alpha, K}(\alpha) = 0$.
+
+On obtient alors la proposition suivante.
+
+\begin{proposition}
+	Soit $P_{\alpha, K}$ le polynome minimal de $\alpha$ sur $K$.
+
+	Soit $\GSfunction{\sigma}{K(\alpha)}{\overline{K}}$ un $K$-plongement. Alors
+	$\sigma(\alpha)$ est racine de $P_{\alpha, K}$.
+
+	En particulier, si on pose $N$ le nombre de racines de $P_{\alpha, K}$,
+	alors il y a au plus $K$-plongement de $K(\alpha)$ dans $\overline{K}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	Soit $L/K$ algébrique.
+
+	On définit l'ensemble $\plongement{K}{L}{\overline{K}} =
+	\GSset{\GSfunction{\sigma}{L}{\overline{K}}, \text{$K$-plongement}}$
+\end{definition}
+
+\begin{exemple}
+	$\cardinal{\plongement{\rational}{\rational[\sqrt[3]{2}]}{\rational}} \leq 3$
+\end{exemple}
+
+% Page 26 et 27 pas faites.
+
+\begin{proposition}
+	Soient $F/K$ une extension algébrique, et $\alpha \in \overline{K}$.
+	Soit $\GSfunction{\sigma}{F}{\overline{K}}$ un $K$-plongement ($\sigma \in
+	\plongement{K}{F}{\overline{K}}$).
+
+	Alors l'application:
+
+	\begin{align*}
+		& \GSsetDef{\tau \in \plongement{K}{F(\alpha)}{\overline{K}}}{\tau_{|F} =
+		\sigma} \rightarrow \GSset{\text{racines dans $\overline{K}$ de
+		$\sigma(P_{\alpha, F})$}} \\
+		& \tau &\rightarrow& \tau(\alpha)
+	\end{align*}
+
+	est bijective. Nous venons donc de faire le lien entre les plongements et
+	les racines du polynome minimal.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	On sait que
+	$\plongement{\rational}{\rational(\sqrt[4]{2})}{\overline{\rational}}$
+	comporte au plus $4$ éléments distincts. Notons les $\sigma_{0}$, $\sigma_{1}$,
+	$\sigma_{2}$ et $\sigma_{3}$,
+	Nous avons $P_{\sqrt[4]{2}, \rational}(X) = X^{4} - 1$.
+
+	$P_{\sqrt[4]{2}, \rational}(X)$ possèdant $4$ racines distinctes, la
+	proposition nous dit alors que nous avons $4$
+	$K$-plongements de $\rational{\sqrt[4]{2}}$ dans $\overline{\rational}$, et
+	ces plongements sont donnés par
+	$\GSfunction{\sigma_{k}}{\rational(\sqrt[4]{2})}{\overline{\rational}}$ :
+	$\sqrt[4]{2} \rightarrow \zeta^{k}_{4} \sqrt[4]{2}$ pour $0 \leq k \leq 3$.
+\end{exemple}
+
+\begin{proposition}
+	Rappelons que nous supposons que $K$ est de caractéristique nulle.
+
+	Soient $F/K$ une extension algébrique et $P(X)$ irréductible dans $F[X]$.
+	Alors toutes les racines de $P(X)$ dans $\overline{K}$ sont simples.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soient $F/K$ algébrique et $\alpha \in \overline{K}$.
+	Soit $\sigma \in \plongement{K}{F}{\overline{K}}$.
+
+	Alors $\cardinal{\GSsetDef{\tau \in \plongement{K}{F(\alpha)}{\overline{K}}}{\tau_{|K} =
+\sigma}} = \extensionDegree{F(\alpha)}{F}$.
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $L/K$ une extension finie.
+
+	Alors $\cardinal{\plongement{K}{L}{\overline{K}}} = \extensionDegree{L}{K}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+% exemple page 31 et 32
+
+
+\begin{theorem} [de l'élément primitif]
+	\label{theorem:primitif_element}
+	Soit $K$ un corps de caractéristique nulle.
+	Soit $L/K$ une extension finie. Alors il existe $\alpha \in L$ tel que $L =
+	K(\alpha)$.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exercice}
+	Montrer que $\rational(\sqrt{2}, \sqrt{3}) = \rational(\sqrt{2} + \sqrt{3})$
+	et que $\rational(\zeta_{3}, \zeta_{2}) = \rational(\zeta_{3} \zeta_{2})$.
+\end{exercice}
+
+\begin{remarque}
+	Le théorème de l'élément primitif \ref{theorem:primitif_element} est aussi
+	valable pour les corps finis.
+\end{remarque}
+
 \section{Groupe de Galois en caractéristique nulle}
+
+\begin{definition} [Groupe de Galois]
+	Soit $L/K$ une extension finie.
+
+	On définit \textbf{le groupe de Galois de l'extension $L/K$}:
+	\begin{align*}
+		\galoisGroup{L}{K} & := \GSautomorphismDef{K}{L} \\
+		& = \GSsetDef{\GSfunction{\tau}{L}{L}}{\text{$\tau$ isomorphisme
+		$K$-linéaire de corps}}
+	\end{align*}
+
+	$(\galoisGroup{L}{K}, \circ)$ est un groupe.
+\end{definition}
+
+Soit $\GSfunction{i}{L}{\overline{K}}$ le morphisme d'injection de $L$ dans
+$\overline{K}$.
+
+Alors l'application
+
+\begin{center}
+$
+\begin{aligned}
+	\galoisGroup{L}{K} &\rightarrow& \plongement{K}{L}{\overline{K}} \\
+	\sigma &\rightarrow& i \circ \sigma
+\end{aligned}
+$
+\end{center}
+
+est injective.
+
+Soit $\GSfunction{\tau}{L}{\overline{K}}$ $K$-plongmenent tel que $\tau(L)
+\subseteq L$. Comme $L/K$ est de dimension finie, on a par le théorème du rang
+que $\tau(L) = L$
+D'où $\tau \in \galoisGroup{L}{K}$.
+
+On identifie donc, grace à cette injection,
+
+\begin{equation*}
+	\galoisGroup{L}{K} = \GSsetDef{\sigma \in
+	\plongement{K}{L}{\overline{K}}}{\sigma(L) \subseteq L}
+\end{equation*}
+
+\begin{exemple}
+	Soit $L = K(\alpha)$, $\alpha \in \overline{K}$.
+
+	Alors
+	\begin{align*}
+		\galoisGroup{K(\alpha)}{K}
+		& = \GSsetDef{\sigma \in
+			\plongement{K}{K(\alpha)}{\overline{K}}}{\sigma(K(\alpha)) \subseteq
+			K(\alpha)} \\
+		& = \GSsetDef{\sigma \in
+			\plongement{K}{K(\alpha)}{\overline{K}}}{\sigma(\alpha) \in
+			K(\alpha)} \\
+		& \isomorph Rac(P_{\alpha, K}) \inter K(\alpha)
+	\end{align*}
+
+	En particulier, $\ordergroup{\galoisGroup{L}{K}} =
+	\cardinal{\plongement{K}{L}{\overline{K}}} = \extensionDegree{L}{K}$.
+\end{exemple}
+
+\begin{exemple}
+	\begin{itemize}
+		\item $\galoisGroup{K}{K} = \GSset{Id_{K}}$.
+	\end{itemize}
+\end{exemple}
