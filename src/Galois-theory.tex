@@ -7,8 +7,8 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 
 \begin{definition} [Morphisme de corps]
 	\label{def:morphisme_corps}
-	Soit $K$ et $F$ deux corps. \textbf{Un morphisme de corps entre $K$ et $F$}
-	est un morphisme d'annau.
+	Soient $K$ et $F$ deux corps. \textbf{Un morphisme de corps entre $K$ et $F$}
+	est un morphisme d'anneau.
 \end{definition}
 
 \begin{proposition}
@@ -17,7 +17,7 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 
 \begin{definition} [Extension de corps et sous corps]
 	\label{def:extension_sous_corps}
-	Soit $K$ et $L$ deux corps. On dit que $L$ est \textbf{une extension de
+	Soient $K$ et $L$ deux corps. On dit que $L$ est \textbf{une extension de
 	corps}, et $K$ \textbf{un sous corps de $L$} si $K \subseteq L$ et on note
 	$L/K$.
 \end{definition}
@@ -61,9 +61,9 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 \end{proposition}
 
 \begin{remarque}
-	Soit $K \subseteq L \subseteq M$. Alors $\extensionDegree{L}{K} /
-	\extensionDegree{M}{K}$ et $\extensionDegree{M}{L} /
-	\extensionDegree{M}{K}$. En particulier, si $\extensionDegree{M}{K}$ est un
+	Soit $K \subseteq L \subseteq M$. Alors $\extensionDegree{L}{K}$ divise
+	$\extensionDegree{M}{K}$ et $\extensionDegree{M}{L}$ divise
+	$\extensionDegree{M}{K}$. En particulier, si $\extensionDegree{M}{K}$ est un
 	nombre premier, alors il n'existe pas de corps strictement compris entre $K$
 	et $M$.
 \end{remarque}
@@ -78,7 +78,7 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 
 	\begin{itemize}
 		\item $LM = \displaystyle \bigcap_{\substack{F \subseteq E
-				\text{sous-corps} \\ M \subseteq F \\ L \subseteq F}}
+				\text{ corps} \\ M \subseteq F \\ L \subseteq F}}
 	F$. C'est la plus grande extension de $K$ contenant $L$ et $M$.
 		\item $L \inter M$ est la plus grande extension de $K$ contenue dans $L$
 			et $M$. De manière générale, on peut étudier une intersection
@@ -92,22 +92,24 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 \end{exercice}
 
 \begin{definition}
-	Soit $L/K$ une extension de corps. Soit $S$ un sous-ensemble de $L$ (sans
-	nécessairement de structures).
+	Soit $L/K$ une extension de corps. Soit $S$ un sous-ensemble de $L$ (il n'y
+	a pas nécessairement de structures sur $S$).
 
 	On définit $K(S)$ par:
 
 	\begin{equation*}
 		K(S) = \displaystyle \bigcap_{\substack{K \subseteq F \subseteq L
-			\text{corps} \\ S \subseteq F}} F
+			\text{ corps} \\ S \subseteq F}} F
 	\end{equation*}
 
 	En particulier, quand $S = \GSset{\alpha_{1}, \cdots, \alpha_{n}}$, on note
 	$K(S)$ par $K(\alpha_{1}, \cdots, \alpha_{n})$.
+
+	C'est le plus petit corps contenant le corps $K$ et le sous-ensemble $S$.
 \end{definition}
 
 \begin{proposition}
-	Soit $L/K$ une extension de corps. Soit $\alpha$, $\beta \in L$.
+	Soit $L/K$ une extension de corps. Soient $\alpha$, $\beta \in L$.
 	Alors $K(\alpha, \beta) = K(\alpha)K(\beta)$.
 \end{proposition}
 
@@ -117,15 +119,15 @@ Rappelons qu'un \textbf{corps} est un anneau commutatif $A$ tel que le seul
 \end{proof}
 \fi
 
-Prenons $\alpha \in L$ qui est algébrique sur $K$, et construisons le morphisme
-d'évaluation $eval_{\alpha, K} : K[X] \rightarrow L : P(X) \rightarrow P(\alpha)$
-non nul. On pose $K[\alpha] = Im(eval_{\alpha, K})$.
+Soit $L/K$ une extension de corps. Prenons $\alpha \in L$, et construisons le
+morphisme d'évaluation $eval_{\alpha, K} : K[X] \rightarrow L : P(X) \rightarrow
+P(\alpha)$ non nul. On pose $K[\alpha] = Im(eval_{\alpha, K})$.
 
-Comme $K$ est un corps, on a que $K[X]$ est euclidien, et donc que ses idéaux
+Comme $K$ est un corps, on a que $K[X]$ est euclidien, donc ses idéaux
 sont engendrés par un élément.
 
-Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
-% l'évaluation est non nul => ker = (P).
+Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$ car
+le noyau de tout morphisme d'anneau est un idéal.
 
 \begin{definition} [Algébrique / transcendant]
 	Soit $L/K$ et $\alpha \in L$. on dit que \textbf{$\alpha$ est algébrique sur
@@ -135,6 +137,7 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 
 \begin{proposition}
 	Soit $\alpha \in L$ algèbrique sur $K$. Alors $K[\alpha]$ est un corps.
+	En particulier, $K(\alpha) = K[\alpha]$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -221,7 +224,7 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 
 \begin{proposition}
 	Soit $L/K$ une extension finie. Alors il existe $n \geq 1$, et $\alpha_{1}$,
-	\ldots, $\alpha_{n}$ algébrique sur $K$ tel que $L = K(\alpha_{1}, \cdots,
+	\ldots, $\alpha_{n}$ algébriques sur $K$ tel que $L = K(\alpha_{1}, \cdots,
 	\alpha_{n})$.
 \end{proposition}
 
@@ -233,7 +236,7 @@ Comme $eval_{\alpha, K}$ morphisme, on a $\ker{(ev_{\alpha, K})} = (P)$.
 
 \begin{proposition}
 	Soit $L/K$ une extension de corps.
-	Soit $F$ l'ensemble des éléments de $L$ algébrique sur $K$.
+	Soit $F$ l'ensemble des éléments de $L$ algébriques sur $K$.
 	Alors $F$ est un sous corps de $L$ contenant $K$.
 \end{proposition}
 
@@ -392,7 +395,7 @@ On obtient alors la proposition suivante.
 \end{definition}
 
 \begin{exemple}
-	$\cardinal{\plongement{\rational}{\rational[\sqrt[3]{2}]}{\rational}} \leq 3$
+	$\cardinal{\plongement{\rational}{\rational(\sqrt[3]{2})}{\rational}} \leq 3$
 \end{exemple}
 
 % Page 26 et 27 pas faites.
@@ -563,8 +566,305 @@ On identifie donc, grace à cette injection,
 	\cardinal{\plongement{K}{L}{\overline{K}}} = \extensionDegree{L}{K}$.
 \end{exemple}
 
-\begin{exemple}
+\begin{exemple} [Exercice]
 	\begin{itemize}
 		\item $\galoisGroup{K}{K} = \GSset{Id_{K}}$.
+		\item $\galoisGroup{\rational(\sqrt{2})}{\rational} =
+			\generatedGroup{\sigma} \isomorph
+			\integer/2\integer$ où $\sigma(\sqrt{2}) = - \sqrt{2}$.
+		\item $\galoisGroup{\rational(\sqrt[3]{2})}{\rational} =
+			\GSset{Id_{\rational}}$
+		\item $\galoisGroup{\rational(\sqrt[4]{2})}{\rational} \isomorph
+			\integer/2\integer$ avec $\sigma(\sqrt[4]{2}) = - \sqrt[4]{2}$
+		\item $\galoisGroup{\rational(\zeta_{3}, \sqrt[3]{2})}{\rational}
+			\isomorph S_{3}$
+		\item $\galoisGroup{\rational(\zeta_{4}, \sqrt[4]{2})}{\rational}
+			\isomorph D_{4}$
 	\end{itemize}
 \end{exemple}
+
+Nous en venons à la définition d'extension galoisienne.
+
+\begin{definition}
+	Soit $L/K$ une extension finie.
+	$L/K$ est \textbf{(une extension finie) galoisienne} si $\galoisGroup{L}{K} =
+	\plongement{K}{L}{\overline{K}}$
+\end{definition}
+
+C'est-à-dire que:
+
+\begin{align*}
+	L/K \text{ galoisienne}
+	& \equiv \forall \sigma \in \plongement{K}{L}{\overline{K}}, \sigma(L) \subseteq L \\
+	& \equiv \ordergroup{\galoisGroup{L}{K}} = \extensionDegree{L}{K}
+\end{align*}
+
+\begin{proposition}
+	Prenons maintenant $L = K(\alpha)$ avec $\alpha \in \overline{K}$.
+
+	Alors $K(\alpha)$ galoisienne $\equiv Rac(P_{\alpha, K}) \subseteq K(\alpha)$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple} [Exercice]
+	\begin{itemize}
+		\item $K/K$ est galoisienne.
+		\item $\rational(\sqrt{2})/\rational$ est galoisienne.
+		\item $\rational(\zeta_{3}, \sqrt[3]{2})/\rational$ galoisienne.
+		\item $\rational(\zeta_{4}, \sqrt[4]{2})/\rational$ galoisienne.
+		\item $\rational(\sqrt[3]{2})/\rational$ n'est pas galoisienne.
+		\item $\rational(\sqrt[4]{2})/\rational$ n'est pas galoisienne.
+	\end{itemize}
+\end{exemple}
+
+Remarquons que nous avons $\rational \subseteq \rational(\sqrt{2}) \subseteq
+\rational(\sqrt[4]{2})$ avec $\rational(\sqrt{2})/\rational$ et
+$\rational(\sqrt[4]{2})/\rational(\sqrt{2})$ galoisiennes.
+\textbf{Or, $\rational(\sqrt[4]{2})/\rational$ n'est pas galoisienne}. La
+propriété d'être galoisienne n'est pas transitive !
+
+\begin{definition}
+	Soit $P(X) \in K[X]$ tel que $n := deg(P) \geq 1$. Soit $Rac(P(X)) :=
+	\GSset{\alpha_{1}, \cdots, \alpha_{n}}$ l'ensemble
+	des racines de $P(X)$ dans $\overline{K}$.
+
+	On appelle $K(\alpha_{1}, \cdots, \alpha_{n}) = K(Rac(P(X)))$ \textbf{le
+	corps de décomposition de $P(X)$}.
+\end{definition}
+
+\begin{remarque}
+	Soit $P(X) = \displaystyle \prod_{i = 1}{d} (X - \alpha_{i})^{m_{i}}$ et
+	$P_{0}(X) = \displaystyle \prod_{i = 1}{d} (X - \alpha_{i})$. Alors $P(X)$
+	et $P_{0}(X)$ ont le même corps de décomposition.
+\end{remarque}
+
+\begin{exemple}
+	\begin{itemize}
+		\item $\rational(\sqrt{2})$ est le corps de décomposition de $X^{2} -
+			2$.
+		\item $\rational(\sqrt[3]{2}, \zeta_{3})$ est le corps de décomposition
+			de $X^{3} - 2$.
+		\item $\rational(\sqrt[4]{2}, \zeta_{4})$ est le corps de décomposition
+			de $X^{4} - 2$.
+		\item $\rational(\zeta_{n})$ est le corps de décomposition de $X^{n} -
+			1$.
+	\end{itemize}
+\end{exemple}
+
+\begin{proposition}
+	Soit $L/K$ finie. Alors $L/K$ est galoisienne ssi $L$ est le corps de
+	décomposition d'un polynome de $K[X]$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+Maintenant, nous allons étudier les sous-groupes de $\galoisGroup{L}{K}$.
+Commençons d'abord par définir des objets grace aux sous-ensemble du groupe de
+Galois de $L/K$.
+
+\begin{definition}
+	Soit $L/K$ une extension de corps.
+	Soit $S \subseteq \galoisGroup{L}{K}$ un sous-ensemble fini.
+
+	On pose $L^{S} := \GSsetDef{x \in L}{\forall \sigma \in S, \sigma(x) = x}$.
+	$L^{S}$ comprend tous les éléments fixes par les éléments de $S$.
+\end{definition}
+
+Montrons maintenant quelques propriétés.
+
+\begin{proposition}
+	\begin{itemize}
+		\item $L^{S}$ est un sous-corps de $L$ contenant $K$.
+		\item $S \subseteq T \implies L^{T} \subseteq L^{S}$ (décroissance)
+		\item $L^{S} = L^{\generatedGroup{S}}$ où $\generatedGroup{S}$ est le
+			sous-groupe engendré par $S$.
+	\end{itemize}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+La dernière proposition nous montre qu'il nous suffit d'étudier les sous-groupes
+de $\galoisGroup{L}{K}$ pour déterminer tous les $L^{S}$ où $S$ est un
+sous-ensemble de $\galoisGroup{L}{K}$.
+
+Donnons alors des propriétés quand $S$ est un sous-groupe.
+
+\begin{proposition}
+	Soit $H$ et $H'$ deux sous-groupes de $\galoisGroup{L}{K}$. Alors:
+	\begin{itemize}
+		\item $L^{HH'} = L^{H} \inter L^{H'}$
+		\item $L^{H \inter H'} = L^{H} L^{H'}$
+	\end{itemize}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\section{La correspondance de Galois}
+
+Soit $L/K$ une extension finie galoisienne. Soit $\alpha \in L$.
+Soit $\sigma \in \galoisGroup{L}{K}$.
+Soit $\beta \in Rac(P_{\alpha, K})$.
+Alors on a:
+
+$P_{\alpha, K}(\beta) = 0 \implies P_{\alpha, K}(\sigma(\beta)) = 0$
+
+Donc, le groupe $\galoisGroup{L}{K}$ agit sur tous les éléments de
+$Rac(P_{\alpha, K})$.
+
+C'est-à-dire que l'application
+$\GSfunction{\gamma}{\galoisGroup{L}{K}}{Rac(P_{\alpha, K})}$ est bien définie
+et est une action de groupe.
+
+\begin{proposition}
+	L'action $\gamma$ est transitive, c'est-à-dire que $Rac(P_{\alpha, K}) =
+	\GSsetDef{\sigma(\alpha)}{\sigma \in \galoisGroup{L}{K}}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+On obtient alors $P_{\alpha, K}(X) = \displaystyle \prod_{\sigma \in
+	\galoisGroup{L}{K}} (X - \sigma(\alpha)) = \displaystyle \prod_{\sigma \in
+		\plongement{K}{L}{\overline{K}}} (X - \sigma(\alpha))$
+
+\begin{theorem}
+	Soit $L/K$ une extension finie galoisienne.
+
+	Alors $L^{\galoisGroup{L}{K}} = K$
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $L/K$ une extension finie.
+	Soit $F$ corps tel que $K \subseteq F \subseteq L$.
+
+	Alors on a $\galoisGroup{L}{F} < \galoisGroup{L}{K}$ (décroissance entre
+	sous-corps de $L$ contenant $K$ et sous-groupe de $\galoisGroup{L}{K}$).
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $L/K$ une extension galoisienne, et soit $F$ corps tel que $K \subseteq
+	F \subseteq L$.
+
+	Alors $L/F$ est une extension galoisienne.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+Remarquons que $F/K$ n'est pas nécessairement galoisienne si $L/K$ est
+galoisienne. Un contre-exemple est donné par $\rational(\zeta_{4},
+\sqrt[4]{2})$, $\rational(\sqrt[4]{2})$ et $\rational$.
+
+Nous avons alors montré que nous pouvons construire une fonction $\phi$ qui à
+chaque sous-corps de $L$ contenant $K$ associe un sous-groupe de
+$\galoisGroup{L}{K}$ et inversément, on peut construire une fonction $\psi$ qui
+à chaque sous-groupe de $\galoisGroup{L}{K}$, on peut associer un sous-corps de
+$L$ contenant $K$.
+
+Formellement, on a:
+
+\begin{center}
+	$
+	\begin{aligned}
+		\phi :
+			\GSsetDef{F}{F \text{ corps et } K \subseteq F \subseteq L}
+			&\rightarrow \GSsetDef{H}{H < \galoisGroup{L}{K}}
+			\\
+			F &\rightarrow \galoisGroup{L}{F}
+	\end{aligned}
+	$
+
+	$
+	\begin{aligned}
+		\psi :
+			\GSsetDef{H}{H < \galoisGroup{L}{K}}
+			&\rightarrow
+			\GSsetDef{F}{F \text{ corps et } K \subseteq F \subseteq L}
+			\\
+			H &\rightarrow L^{H}
+	\end{aligned}
+	$
+\end{center}
+
+Quels sont les liens entre $\phi$ et $\psi$ ?
+Cette étude va nous mener à la \textit{correspondance de Galois}.
+
+\begin{theorem}
+	\label{theorem:galois_correspondance}
+	L'application décroissante $\phi$ est bijective et $\psi = \phi^{-1}$.
+	C'est-à-dire $\phi \circ \psi = Id$ et $\psi \circ \phi = Id$.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\textbf{Nous venons donc de faire un lien entre les corps intermédiaires entre $L$ et
+$K$ tel que $L/K$ est galoisienne, et les sous-groupes de groupe de Galois
+$\galoisGroup{L}{K}$.}
+
+Nous avons vu que si nous avons une extension galoisienne $L/K$ et $F$ corps tel
+que $K \subseteq F \subseteq L$, alors $L/F$ est galoisienne, mais pas
+nécessairement $F/K$.
+Nous sommes près à donner une condition nécessaire et suffisante pour que $F/K$
+soit galoisienne.
+
+\begin{proposition}
+	Soient $L/K$ une extension finie galoisienne. Soit $F$ corps tel que $K
+	\subseteq F \subseteq L$.
+
+	Alors $\galoisGroup{L}{F} \lhd \galoisGroup{L}{K}$ ssi $F/K$ est
+	galoisienne.
+
+	Dans ce cas, le morphisme de restriction:
+	\begin{align*}
+		\galoisGroup{L}{K} &\rightarrow \galoisGroup{F}{K} \\
+		\sigma &\rightarrow \sigma_{|F}
+	\end{align*}
+
+	induit un isomorphisme entre $\galoisGroup{L}{K}/\galoisGroup{L}{F}$ et
+	$\galoisGroup{F}{K}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
