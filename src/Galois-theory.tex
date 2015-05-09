@@ -338,17 +338,17 @@ Remarquons que nous avons $L \subseteq \overline{K}$ car $L$ algébrique, et
 $\overline{K}$ contient tous les éléments algébriques sur $K$.
 
 Un $K$-plongement de corps $\GSfunction{\sigma}{L}{\overline{K}}$ est un
-$K$-plongement ssi $\sigma$ fixe tous les éléments $a$ de $K$, ie $\sigma{a} =
+$K$-plongement ssi $\sigma$ fixe tous les éléments $a$ de $K$, ie $\sigma(a) =
 a$.
-On a donc $\sigma_{|K} : K \rightarrow \overline{K}$ qui est le morphisme
+D'où $\sigma_{|K} : K \rightarrow \overline{K}$ est le morphisme
 d'inclusion de $K$ dans $\overline{K}$.
 
 Rappelons que si $\alpha$ est algébrique, alors $K(\alpha)$ est un corps
 contenant $K$.
 
 \begin{proposition}
-	Soient $\alpha \in \overline{K}$, et
-	$\GSfunction{\sigma}{K(\alpha)}{\overline{K}}$.
+	Soient $\alpha \in \overline{K}$,
+	$\GSfunction{\sigma}{K(\alpha)}{\overline{K}}$ et $P(X) \in K[X]$.
 
 	Alors $\sigma(P(\alpha)) = P(\sigma(\alpha))$
 \end{proposition}
@@ -359,8 +359,9 @@ contenant $K$.
 \end{proof}
 \fi
 
-En conclusion, un $K$-plongement de $K(\alpha)$ dans $\overline{K}$ est
-uniquement déterminé par l'image de $\alpha$.
+En conclusion, l'image d'un polynome de $K[X]$ par un $K$-plongement de
+$K(\alpha)$ dans $\overline{K}$ est uniquement déterminé par l'image de
+$\alpha$.
 
 Par un même raisonnement, si on prend $\alpha_{1}, \cdots, \alpha_{n}$ et un
 $K$-plongement de $K(\alpha_{1}, \cdots, \alpha_{n})$ dans $\overline{K}$, alors
@@ -378,7 +379,7 @@ On obtient alors la proposition suivante.
 	$\sigma(\alpha)$ est racine de $P_{\alpha, K}$.
 
 	En particulier, si on pose $N$ le nombre de racines de $P_{\alpha, K}$,
-	alors il y a au plus $K$-plongement de $K(\alpha)$ dans $\overline{K}$.
+	alors il y a au plus $N$ $K$-plongements de $K(\alpha)$ dans $\overline{K}$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -390,7 +391,7 @@ On obtient alors la proposition suivante.
 \begin{definition}
 	Soit $L/K$ algébrique.
 
-	On définit l'ensemble $\plongement{K}{L}{\overline{K}} =
+	On définit l'ensemble $\plongement{K}{L}{\overline{K}} :=
 	\GSset{\GSfunction{\sigma}{L}{\overline{K}}, \text{$K$-plongement}}$
 \end{definition}
 
@@ -406,12 +407,11 @@ On obtient alors la proposition suivante.
 	\plongement{K}{F}{\overline{K}}$).
 
 	Alors l'application:
-
 	\begin{align*}
-		& \GSsetDef{\tau \in \plongement{K}{F(\alpha)}{\overline{K}}}{\tau_{|F} =
-		\sigma} \rightarrow \GSset{\text{racines dans $\overline{K}$ de
-		$\sigma(P_{\alpha, F})$}} \\
-		& \tau &\rightarrow& \tau(\alpha)
+		\GSsetDef{\tau \in \plongement{K}{F(\alpha)}{\overline{K}}}{\tau_{|F} =
+	\sigma} &\rightarrow \GSset{ \text{racines dans } \overline{K} \text{ de }
+		\sigma(P_{\alpha, F})} \\
+		\tau &\rightarrow \tau(\alpha)
 	\end{align*}
 
 	est bijective. Nous venons donc de faire le lien entre les plongements et
@@ -433,7 +433,7 @@ On obtient alors la proposition suivante.
 
 	$P_{\sqrt[4]{2}, \rational}(X)$ possèdant $4$ racines distinctes, la
 	proposition nous dit alors que nous avons $4$
-	$K$-plongements de $\rational{\sqrt[4]{2}}$ dans $\overline{\rational}$, et
+	$K$-plongements de $\rational(\sqrt[4]{2})$ dans $\overline{\rational}$, et
 	ces plongements sont donnés par
 	$\GSfunction{\sigma_{k}}{\rational(\sqrt[4]{2})}{\overline{\rational}}$ :
 	$\sqrt[4]{2} \rightarrow \zeta^{k}_{4} \sqrt[4]{2}$ pour $0 \leq k \leq 3$.
@@ -592,7 +592,6 @@ Nous en venons à la définition d'extension galoisienne.
 \end{definition}
 
 C'est-à-dire que:
-
 \begin{align*}
 	L/K \text{ galoisienne}
 	& \equiv \forall \sigma \in \plongement{K}{L}{\overline{K}}, \sigma(L) \subseteq L \\
@@ -638,8 +637,8 @@ propriété d'être galoisienne n'est pas transitive !
 \end{definition}
 
 \begin{remarque}
-	Soit $P(X) = \displaystyle \prod_{i = 1}{d} (X - \alpha_{i})^{m_{i}}$ et
-	$P_{0}(X) = \displaystyle \prod_{i = 1}{d} (X - \alpha_{i})$. Alors $P(X)$
+	Soit $P(X) = \displaystyle \prod_{i = 1}^{d} (X - \alpha_{i})^{m_{i}}$ et
+	$P_{0}(X) = \displaystyle \prod_{i = 1}^{d} (X - \alpha_{i})$. Alors $P(X)$
 	et $P_{0}(X)$ ont le même corps de décomposition.
 \end{remarque}
 
