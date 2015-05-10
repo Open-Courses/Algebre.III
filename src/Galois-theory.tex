@@ -271,7 +271,7 @@ notre cloture algébrique 'préférée'.
 \begin{lemma}
 	Soit $L/K$ une extension de corps. Soient $\Omega$ algébriquement clos
 	contenant $K$, et
-	$\GSfunction{\sigma}{K}{\Omega}$ le morphisme d'inclusion.
+	$\GSfunction{\sigma}{K}{\Omega}$ un plongement de corps.
 
 	Soit $\alpha \in L$ algébrique sur $K$.
 
@@ -287,8 +287,8 @@ notre cloture algébrique 'préférée'.
 
 \begin{theorem} [Extension des plongements]
 	Soit $L/K$ algébrique.
-	Soient $\Omega$ algébriquement clos contenant $K$ et $\GSfunction{\sigma}{K}{\Omega}$ le
-	morphisme d'inclusion.
+	Soient $\Omega$ algébriquement clos contenant $K$ et
+	$\GSfunction{\sigma}{K}{\Omega}$ un plongement de corps.
 	Alors il existe $\GSfunction{\tau}{L}{\Omega}$ plongement tel que $\tau_{|K}
 	= \sigma$.
 \end{theorem}
@@ -467,9 +467,12 @@ On obtient alors la proposition suivante.
 \fi
 
 \begin{proposition}
+	\label{prop:k-plongement_degree_extension}
 	Soit $L/K$ une extension finie.
 
 	Alors $\cardinal{\plongement{K}{L}{\overline{K}}} = \extensionDegree{L}{K}$.
+	En d'autres termes, une extension finie est définie par les $K$-plongements,
+	et le nombre de $K$-plongements est exactement le degré de l'extension.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -533,17 +536,19 @@ $
 $
 \end{center}
 
-est injective.
+est injective. On a donc en particulier que $\ordergroup{\galoisGroup{L}{K}}
+\leq \cardinal{\plongement{K}{L}{\overline{K}}}$. Quels conditions nous faut-il
+sur les plongements pour obtenir une surjection ?
 
-Soit $\GSfunction{\tau}{L}{\overline{K}}$ $K$-plongmenent tel que $\tau(L)
+Soit $\GSfunction{\tau}{L}{\overline{K}}$ un $K$-plongement tel que $\tau(L)
 \subseteq L$. Comme $L/K$ est de dimension finie, on a par le théorème du rang
-que $\tau(L) = L$
+que $\tau(L) = L$.
 D'où $\tau \in \galoisGroup{L}{K}$.
 
 On identifie donc, grace à cette injection,
 
 \begin{equation*}
-	\galoisGroup{L}{K} = \GSsetDef{\sigma \in
+	\galoisGroup{L}{K} \isomorph \GSsetDef{\sigma \in
 	\plongement{K}{L}{\overline{K}}}{\sigma(L) \subseteq L}
 \end{equation*}
 
@@ -562,8 +567,9 @@ On identifie donc, grace à cette injection,
 		& \isomorph Rac(P_{\alpha, K}) \inter K(\alpha)
 	\end{align*}
 
-	En particulier, $\ordergroup{\galoisGroup{L}{K}} =
-	\cardinal{\plongement{K}{L}{\overline{K}}} = \extensionDegree{L}{K}$.
+	En particulier, $\ordergroup{\galoisGroup{L}{K}} \leq
+	\cardinal{\plongement{K}{L}{\overline{K}}} = \extensionDegree{L}{K}$. La
+	dernière égalité résultat de \ref{prop:k-plongement_degree_extension}.
 \end{exemple}
 
 \begin{exemple} [Exercice]
@@ -595,8 +601,12 @@ C'est-à-dire que:
 \begin{align*}
 	L/K \text{ galoisienne}
 	& \equiv \forall \sigma \in \plongement{K}{L}{\overline{K}}, \sigma(L) \subseteq L \\
+	& \equiv \plongement{K}{L}{\overline{K}} = \galoisGroup{L}{K} \\
 	& \equiv \ordergroup{\galoisGroup{L}{K}} = \extensionDegree{L}{K}
 \end{align*}
+
+l'égalité $\ordergroup{\galoisGroup{L}{K}} = \extensionDegree{L}{K}$ résultant
+de \ref{prop:k-plongement_degree_extension}.
 
 \begin{proposition}
 	Prenons maintenant $L = K(\alpha)$ avec $\alpha \in \overline{K}$.
@@ -667,7 +677,7 @@ propriété d'être galoisienne n'est pas transitive !
 \fi
 
 Maintenant, nous allons étudier les sous-groupes de $\galoisGroup{L}{K}$.
-Commençons d'abord par définir des objets grace aux sous-ensemble du groupe de
+Commençons d'abord par définir des objets grace aux sous-ensembles du groupe de
 Galois de $L/K$.
 
 \begin{definition}
@@ -699,10 +709,12 @@ La dernière proposition nous montre qu'il nous suffit d'étudier les sous-group
 de $\galoisGroup{L}{K}$ pour déterminer tous les $L^{S}$ où $S$ est un
 sous-ensemble de $\galoisGroup{L}{K}$.
 
-Donnons alors des propriétés quand $S$ est un sous-groupe.
+Donnons alors des propriétés quand $S$ est un sous-groupe. Nous utiliserons la
+notation $H$ à la place de $S$ pour rester cohérent avec les notations usuelles
+de la théorie des groupes.
 
 \begin{proposition}
-	Soit $H$ et $H'$ deux sous-groupes de $\galoisGroup{L}{K}$. Alors:
+	Soient $H$ et $H'$ deux sous-groupes de $\galoisGroup{L}{K}$. Alors:
 	\begin{itemize}
 		\item $L^{HH'} = L^{H} \inter L^{H'}$
 		\item $L^{H \inter H'} = L^{H} L^{H'}$
@@ -835,8 +847,8 @@ Cette étude va nous mener à la \textit{correspondance de Galois}.
 \end{proof}
 \fi
 
-\textbf{Nous venons donc de faire un lien entre les corps intermédiaires entre $L$ et
-$K$ tel que $L/K$ est galoisienne, et les sous-groupes de groupe de Galois
+\textbf{Nous venons donc de faire un lien entre les corps intermédiaires de $L$ et
+$K$ tel que $L/K$ est galoisienne, et les sous-groupes du groupe de Galois
 $\galoisGroup{L}{K}$.}
 
 Nous avons vu que si nous avons une extension galoisienne $L/K$ et $F$ corps tel
