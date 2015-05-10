@@ -10,7 +10,7 @@ noproof:
 	cd $(SRC_DIR) && pdflatex -output-directory ../ $(SRC)
 	cd $(SRC_DIR) && pdflatex -output-directory ../ $(SRC)
 
-zip: fclean $(NAME)
+zip: fclean noproof
 	$(MAKE) clean
 	zip -r $(NAME).zip . -x *.git*
 
