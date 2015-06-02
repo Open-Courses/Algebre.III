@@ -163,15 +163,23 @@
 	\textbf{Un morphisme d'anneau} $f$ entre deux anneaux $A$ et $B$ est un
 	morphisme de groupe tel que $f(ab) = f(a) f(b)$ et $f(1_{A}) = 1_{B}$.
 
-	C'est \textbf{un endormorphisme} si $A = B$, \textbf{un isomorphisme} si $f$
-	est bijectif, \textbf{un automorphisme} si $f$ est un isomorphisme et un
-	endormorphisme. Un morphisme d'anneau entre deux corps est \textbf{un
-	morphisme de corps}.
+	De plus, c'est
+	\begin{itemize}
+		\item \textbf{un endormorphisme} si $A = B$.
+		\item \textbf{un isomorphisme} si $f$ est bijectif.
+		\item \textbf{un automorphisme} si $f$ est un isomorphisme et un
+			endormorphisme.
+		\item \textbf{un morphisme de corps} si c'est un morphisme d'anneau entre deux corps.
+	\end{itemize}
 \end{definition}
 
 \begin{remarque}
 	Si $\GSfunction{f}{A}{B}$ est un morphisme d'anneau, alors $f(A^{\cartprod})
-	\subseteq B^{\cartprod}$.
+	\subseteq B^{\cartprod}$, et
+	\begin{equation}
+		f^{*} : (A^{\cartprod}, .) \rightarrow (B^{\cartprod}, .)
+	\end{equation}
+	est un morphisme de groupe.
 \end{remarque}
 
 \begin{proposition}
@@ -354,11 +362,13 @@
 \end{exemple}
 
 \begin{proposition}
-	Soient $I, J$ deux idéaux d'un anneau $A$. Alors $I \inter J$ est le plus
-	grand idéal de $A$ contenu dans $I$ et $J$, et $I + J$ est le plus petit
-	idéal contenant $I$ et $J$ (en particulier, c'est le plus petit sous-groupe
-	contenant $I$ et $J$).
+	Soient $I, J$ deux idéaux d'un anneau $A$. alors
 
+	\begin{itemize}
+		\item $I \inter J$ est le plus grand idéal de $A$ contenu dans $I$ et $J$
+		\item $I + J$ est le plus petit idéal contenant $I$ et $J$ (en
+			particulier, c'est le plus petit sous-groupe contenant $I$ et $J$).
+	\end{itemize}
 	Nous pouvons généraliser à un nombre quelconque d'idéaux.
 \end{proposition}
 
@@ -391,7 +401,7 @@
 \fi
 
 \begin{proposition}
-	Les seuls idéaux d'un corps $\mathbb{K}$ est $(0_{\mathbb{K}})$ où
+	Les seuls idéaux d'un corps $\mathbb{K}$ sont $(0_{\mathbb{K}})$ où
 	$\mathbb{K}$.
 \end{proposition}
 
@@ -415,7 +425,111 @@
 \end{proof}
 \fi
 
-% Quotients
+\begin{exemple}
+	Soient $\mathbb{K}$ un corps et $E$ un espace vectoriel non-nul sur
+	$\mathbb{K}$.
+
+	Alors l'application
+	\begin{equation}
+		f : \mathbb{K} \rightarrow End_{\mathbb{K}}(E) : \lambda \rightarrow
+		f(\lambda)
+	\end{equation}
+	où
+	\begin{equation}
+		f(\lambda) : E \rightarrow E : v \rightarrow \lambda v
+	\end{equation}
+	est un morphisme d'anneau injectif.
+\end{exemple}
+
+\section{Quotients}
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif et soit $I$ un idéal de $A$.
+	La multiplication induit un sur $A$ induit une structure d'anneau sur $(A/I,
+	+)$ où
+	\begin{equation}
+		(a + I) (b + I) = ab + I
+	\end{equation}
+	et la projection
+	\begin{equation}
+		\pi_{I} : A \rightarrow A / I : a \rightarrow a + I
+	\end{equation}
+	est un morphisme d'anneau surjectif.
+
+	De plus,
+	\begin{itemize}
+		\item $\ker(\pi_{I}) = I$
+		\item $(A / I)^{\cartprod} = \GSsetDef{a + I \in A / I}{\exists b \in A
+				\text{ tel que } ab^{-1} = I}$
+	\end{itemize}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	\begin{itemize}
+		\item $n \in \integer_{0}$, $A = \integer$, $I = n \integer \rightarrow
+			\integer / n \integer$ anneau et
+			\begin{align}
+				(\integer / n \integer)^{\cartprod} &= \GSsetDef{a +
+				n\integer}{\exists b \in \integer, ab^{-1} \in n\integer} \\
+				& = \GSsetDef{a + n \integer}{\exists b, c \in \integer \text{
+				tel que } a b + n c = 1_{A}} \\
+				& = \GSsetDef{a + n \integer}{pgcd(a, n) = 1}
+			\end{align}
+		\item $(\integer / 6 \integer)^{\cartprod} = \GSset{1 + 6\integer = 6\integer, -1 +
+			6\integer = 5 + 6 \integer}$
+	\end{itemize}
+\end{exemple}
+
+\begin{proposition}
+	Soient $A$ et $B$ deux anneaux commutatifs et soit $\GSfunction{f}{A}{B}$ un
+	morphisme d'anneau.
+	Soit $I$ un idéal de $A$.
+
+	Alors il existe un morphisme d'anneau
+	\begin{equation}
+		\GSfunction{\overline{f}}{A / I}{B}
+	\end{equation}
+	vérifiant
+	\begin{equation}
+		\overline{f} \circ \pi_{I} = f \equiv I \subseteq \ker(f)
+	\end{equation}
+
+	Dans ce cas, on a
+	\begin{itemize}
+		\item $\Im(\overline{f}) = Im(f)$
+		\item $\ker(\overline{f}) = \ker(f) / I$
+	\end{itemize}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soient $A$, $B$ deux anneaux et soit $\GSfunction{f}{A}{B}$ un morphisme
+	d'anneaux.
+
+	Alors
+	\begin{equation}
+		\overline{f} : A / \ker(f) \rightarrow \Im(f) : a + \ker(f) \rightarrow
+		f(a)
+	\end{equation}
+	est un isomorphisme d'anneaux
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
 
 \section{Morphismes fondamentaux}
 
@@ -458,7 +572,7 @@
 \end{proof}
 \fi
 
-% Exemples Page 7
+% TODO Exemples Page 7
 
 \subsection{Le corps des réels}
 
@@ -561,7 +675,7 @@
 \end{proof}
 \fi
 
-%exemple
+% TODO exemple
 
 \section{Théorème chinois}
 
