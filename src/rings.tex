@@ -557,13 +557,16 @@
 	$12$.
 \end{exemple}
 
-\subsection{Anneau de polynomes}
+\subsection{Anneaux de polynomes}
 
 \begin{proposition}
 	Soit $\GSfunction{f}{A}{B}$ un morphisme d'anneaux. Alors
-	$\GSfunction{\tilde{f}}{A[X]}{B[X]} : P(X) = \sum_{i = 1}^{k} a_{k} X^{k}
-	\rightarrow \sum_{i = 1}^{k} f(a_{k}) X^{k}$ est un morphisme d'anneaux. De
-	plus, $\tilde{f}_{|A} = f$.
+
+	\begin{equation}
+		\GSfunction{\tilde{f}}{A[X]}{B[X]} : P(X) = \sum_{i = 1}^{k} a_{k} X^{k}
+	\rightarrow \sum_{i = 1}^{k} f(a_{k}) X^{k}
+	\end{equation}
+	est un morphisme d'anneaux. De plus, $\tilde{f}_{|A} = f$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -572,7 +575,36 @@
 \end{proof}
 \fi
 
-% TODO Exemples Page 7
+\begin{exemple}
+	\begin{itemize}
+		\item La conjugaison complexe étant un automorphisme d'anneaux de
+			$\complex$, la fonction
+			\begin{equation}
+				\overline{f} : \complex[X] \rightarrow \complex[X] : \sum_{i =
+				1}^{n} a_{i} X^{i} \rightarrow \conjuguate{a_{i}} X^{i}
+			\end{equation}
+			est un automorphisme d'anneaux.
+		\item Soit $n \in \integer$ et soit $\pi_{n} : \integer \rightarrow
+			\integer / n \integer : a \rightarrow a + mod(n \integer)$ le morphisme surjectif de
+		projection.
+
+		Alors
+		\begin{align}
+			\tilde{\pi_{n}} : \integer[X] & \rightarrow \integer / n \integer[X]
+			\\
+			\sum_{i = 1}^{n} a_{i} X^{i} & \rightarrow \sum_{i = 1}^{n} (a_{i}
+			mod(n \integer)) X^{i}
+		\end{align}
+		est un morphisme d'anneau surjectif.
+
+		Par factorisation, on obtient l'isomorphisme d'anneau
+		\begin{equation}
+			\integer[X] / n \integer[X] \xrightarrow{\sim} (\integer
+			/ n \integer)[X]
+		\end{equation}
+
+	\end{itemize}
+\end{exemple}
 
 \subsection{Le corps des réels}
 
@@ -581,6 +613,12 @@
 	\GSsetDef{\GSsequence{a}{n}{\naturel}}{a_{n} \text{ est une suite de Cauchy}}$.
 	Alors $\mathcal{C}(\rational)$ est un sous-anneau de $\rational^{\naturel}$
 \end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
 
 \begin{definition}
 	$\mathcal{C}_{0}(\rational) = \GSsetDef{\GSsequence{a}{n}{\naturel}}{lim
@@ -606,8 +644,12 @@
 \begin{proposition}
 	Soit $A$ un anneau commutatif. Soit $a \in A$.
 
-	Alors $\GSfunction{eval_{a}}{A[X]}{A} : P(X) \rightarrow P(a)$ est un
-	morphisme d'anneau surjectif et ${(eval_{a})}_{|A} = Id_{A}$.
+	Alors 
+	\begin{equation}
+		\GSfunction{eval_{a}}{A[X]}{A} : P(X) \rightarrow P(a)
+		\label{<++>}
+	\end{equation}
+	est un morphisme d'anneau surjectif et ${(eval_{a})}_{|A} = Id_{A}$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -617,9 +659,11 @@
 \fi
 
 \begin{proposition}
-	Pour tout $a \in A$, $\GSfunction{\tau_{a}}{A[X]}{A[X]} : P(X) \rightarrow
-	P(X - a)$, est un automorphisme d'anneau avec $(\tau_{a})^{-1} =
-	\tau_{-a}$.
+	Pour tout $a \in A$, 
+	\begin{equation}
+		\GSfunction{\tau_{a}}{A[X]}{A[X]} : P(X) \rightarrow P(X - a)
+	\end{equation}
+	est un automorphisme d'anneau avec $(\tau_{a})^{-1} = \tau_{-a}$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -629,7 +673,12 @@
 \fi
 
 \begin{proposition}
-	Pour tout $a \in A$, $eval_{a} \circ \tau_{a} = eval_{0}$
+	Pour tout $a \in A$, 
+
+	\begin{equation}
+		eval_{a} \circ \tau_{a} = eval_{0}
+	\end{equation}
+
 \end{proposition}
 
 \ifdefined\outputproof
@@ -639,7 +688,7 @@
 \fi
 
 \begin{corollary}
-	$\ker(eval_{a}) = \tau_{a}(\ker{eval_{0}}) = (X - a)$
+	$\ker(eval_{a}) = \tau_{a}(\ker(eval_{0})) = (X - a)$
 \end{corollary}
 
 \ifdefined\outputproof
@@ -649,8 +698,13 @@
 \fi
 
 \begin{proposition}
-	$A[X] / (X - a) \rightarrow A : P(X) mod(X - a) \rightarrow P(a)$ est un
-	isomorphisme d'anneau.
+	Pour tout $a \in A$, l'application
+	\begin{equation}
+		A[X] / (X - a) \rightarrow A : P(X) \, mod(X - a) \rightarrow P(a)
+	\end{equation}
+	est un isomorphisme d'anneaux.
+
+	On a donc $A[X] / (X - a) \xrightarrow{\sim} A$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -663,10 +717,15 @@
 
 \begin{proposition}
 	Soient $A$ et $B$ deux anneaux commutatifs tel que $A$ est un sous-anneau de
-	$B$. Alors, $\forall b \in B$, $eval_{b} : A[X] \rightarrow B : P(X)
-	\rightarrow P(b)$ est un morphisme d'anneau tel que ${(eval_{b})}_{|A}$ est
-	l'inclusion de $A$ dans $B$. De plus, $Im(eval_{b}) = A[b] = $ le plus petit
-	sous-anneau de $B$ contenant $A$ et $b$. % noyau ?
+	$B$. Alors, pour tout $b \in B$, l'application d'évaluation en $b$
+	\begin{equation}
+		eval_{b} : A[X] \rightarrow B : P(X) \rightarrow P(b)
+	\end{equation}
+	est un morphisme d'anneau tel que ${(eval_{b})}_{|A}$ est
+	l'inclusion de $A$ dans $B$.
+	
+	De plus, $Im(eval_{b}) := A[b] := $ le plus petit sous-anneau de $B$
+	contenant $A$ et $b$. % TODO noyau ? pas dans le resumé de Sam.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -675,11 +734,11 @@
 \end{proof}
 \fi
 
-% TODO exemple
+% TODO exemple page 8
 
 \section{Théorème chinois}
 
-\subsection{Aspect historique}
+%\subsection{Aspect historique}
 % Aspect historique
 
 \subsection{Énoncé}
@@ -688,11 +747,18 @@ Nous souhaitons, pour deux anneaux donnés, et sous certaines conditions, montre
 que $A/(I \cap J)$ est isomorphe à $A/I \times A/J$.
 
 Soient $I, J$ deux idéaux de $A$. Alors, nous pouvons construire
-$\GSfunction{f}{A}{A/I \times A/J}$ : $a \rightarrow (a + I, a + J)$.
+
+\begin{equation}
+	\GSfunction{f}{A}{A/I \times A/J} : a \rightarrow (a + I, a + J)
+\end{equation}
+
 Nous avons $ker(f) = I \cap J$.
 
-On a alors un morphisme injectif $\GSfunction{\overline{f}}{A/(I \cap
-J)}{A/I \times A/J}$induit par $f$.
+On a alors un morphisme injectif 
+\begin{equation}
+	\GSfunction{\overline{f}}{A/(I \cap J)}{A/I \times A/J}
+\end{equation}
+induit par $f$.
 
 Il nous manque donc une condition, la surjectivité, pour avoir un isomorphisme
 entre ces deux anneaux.
@@ -717,8 +783,13 @@ $\overline{f}$. Il suffit de trouver une condition pour que $\overline{f}$. Nous
 avons alors le résultat suivant, dit théorème chinois généralisé.
 
 \begin{theorem}
-	Si $\forall k \in \left\{1, \ldots, n\right\}$, $I_{k} + \displaystyle
-	\bigcap_{1 = i \ne k}^{n} I_{i} = A$, alors $\overline{f}$ est surjectif, et
+	Si pour tout $1 \leq k \leq n$, on a
+	
+	\begin{equation}
+		I_{k} + \displaystyle \bigcap_{{i = 1, i \neq k}}^{n} I_{i} = A
+	\end{equation}
+
+	alors $\overline{f}$ est surjectif, et
 	donc $\GSprodSet{i}{1}{n}{A/I}$ est isomorphe à $\displaystyle A/\bigcap_{i = 1}^{n}
 	I_{i}$.
 \end{theorem}
@@ -733,23 +804,98 @@ avons alors le résultat suivant, dit théorème chinois généralisé.
 
 \begin{exemple}
 	\begin{itemize}
-		\item
-		\item
-		\item
+		\item Soient $A = \integer$, $I = n \integer$, $J = m\integer$. On a $I
+			\inter J = ppcm(n, m) \integer$, et $I + J = pgcd(n, m) \integer$.
+			D'où $I + J = \integer \equiv pgcd(n, m) = 1 \equiv ppcm(n, m) =
+			nm$.
+
+			Donc, si $pgcd(n, m) = 1$, on a un isomorphisme entre $\integer / nm
+			\integer$ et $\integer / n \integer \cartprod \integer / m
+			\integer$.
+
+			Celui-ci est donné par $a \, \, mod(nm \integer) \rightarrow (a \,
+			\, mod(n
+			\integer), a \, \, mod(m \integer))$.
+		\item Soient $K$ un anneau commutatif non nul, $A = K[X]$, $I = (X)$, $J
+			= (X - 1)$. On a $I + J = K[X]$ et $I \inter J = (X^{2} - X)$.
+
+			Par le théorème chinois, on a
+			\begin{align}
+				K[X] / (X^{2} - X) & \xrightarrow{\sim} K[X] / X \cartprod K[X] / (X -
+				1) \\
+				P(X) \, mod(X^{2} - X) & \xrightarrow{\sim} (P(X) \, mod(X), P(X), \,
+				mod(X - 1))
+			\end{align}
+			
+			De plus, on a vu que $K[X] / X$ est isomorphe à $K$ grace à
+			$eval_{0}$ et $K[X] / (X - 1)$ est isomorphe à $K$ grace à
+			$eval_{1}$.
+
+			On en déduit que $K[X] / (X^{2} - X)$ est isomorphe à $K \cartprod
+			K$.
 	\end{itemize}
 \end{exemple}
-% Interprétation et applications
 
-Le théorème chinois généralisé a une application en théorie des polynômes, dont
-la théorie des anneaux de polynôme sera un peu étudiée au chapitre 2.
-Nous allons maintenant définir l'indicatrice d'Euler, et en donner quelques
-propriétés.
-On s'en servira dans le chapitre 2.
+%Le théorème chinois généralisé a une application en théorie des polynômes, dont
+%la théorie des anneaux de polynôme sera un peu étudiée au chapitre 2.
+%Nous allons maintenant définir l'indicatrice d'Euler, et en donner quelques
+%propriétés.
+%On s'en servira dans le chapitre 2.
+
+%%	Indicatrice d'Euler
+%%		Définition
+%%		Propriété
+%%		Calcul
+
+\begin{exemple}
+	Soient $A = \integer$ et $n \in \integer$.
+	Posons $n = p_{1}^{m_{1}} . \cdots . p_{l}^{m_{l}}$ la décomposition de $n$
+	en facteurs premiers.
+
+	Posons $I_{k} = p_{k}^{m_{k}} \integer$ pour tout $1 \leq k \leq l$.
+
+	On a, pour tout $1 \leq j, k \leq l$, $j \neq k$
+	\begin{equation}
+		I_{k} + I_{j} = \integer
+	\end{equation}
+
+	De plus,
+	\begin{equation}
+		ppcm(p_{1}^{m_{1}}, \cdots, p_{l}^{m_{l}}) = n
+	\end{equation}
+	et
+	\begin{equation}
+		\bigcap_{1 \leq k \leq l} p_{k}^{m_{k}} \integer = n \integer
+	\end{equation}
+
+	On en déduit que
+
+	\begin{equation}
+		\integer / n \integer \xrightarrow{\sim} \prod_{1 \leq i \leq l}
+		(\integer / p_{i}^{m_{i}} \integer)
+	\end{equation}
+
+	et comme corollaire, on obtient
+
+	\begin{equation}
+		(\integer / n \integer)^{\cartprod} \xrightarrow{\sim} \prod_{1 \leq i \leq l}
+		(\integer / p_{i}^{m_{i}} \integer)^{\cartprod}
+	\end{equation}
+	vu comme des groupes. On a alors
+
+	\begin{equation}
+		\ordergroup{(\integer / n \integer)^{\cartprod}} = \ordergroup{\prod_{1 \leq i \leq l}
+		(\integer / p_{i}^{m_{i}} \integer)^{\cartprod}}
+	\end{equation}
+\end{exemple}
 
 \begin{definition}
 	L'indicatrice d'Euler, noté souvent $\phi$ est la fonction
-	$\GSfunction{\phi}{\naturel}{\naturel}$ : $n \rightarrow
-	|(\integer/n\integer)^{*}|$.
+
+	\begin{equation}
+		\GSfunction{\phi}{\naturel}{\naturel} : n \rightarrow
+		|(\integer/n\integer)^{\cartprod}|
+	\end{equation}
 \end{definition}
 
 L'indicatrice d'Euler donne donc, pour chaque $n \in \naturel$, le nombre
@@ -758,91 +904,108 @@ On obtient directement une première propriété : $\phi(p) = p - 1$ où $p$ est
 premier. En effet $\integer/p\integer$ est un corps, donc tous les éléments non
 nuls sont inversibles.
 
-%	Indicatrice d'Euler
-%		Définition
-%		Propriété
-%		Calcul
-
-
-
-\subsection{Anneau euclidien}
-
-La proposition suivante est très importante pour définir les idéaux de certains
-anneaux commutatifs, appelé anneau euclidien. Malheureusement, tout anneau
-commutatif n'est pas euclidien.
-
-\begin{definition} [Anneau euclidien]
-	Soit $A$ un anneau. On dit que $A$ est un \textbf{anneau euclidien} si il existe
-	une fonction $\GSfunction{N}{A}{\naturel_{0}}$ tel que : $\forall a, b \in
-	A_{0}$, $\exists q, r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r =
-	0.
-	\label{euclidian_ring}
-\end{definition}
-
-\begin{exemple}
-	\begin{enumerate}
-		\item $\integer$ avec la valeur absolue est un anneau euclidien.
-		\item $\integer[i]$, les entiers de Gauss, muni de la norme complexe
-			usuelle au carré est un anneau euclidien.
-	\end{enumerate}
-\end{exemple}
+Enonçons quelques propriétés de l'indicatrice d'Euler.
 
 \begin{proposition}
-	Tout anneau euclidien est principal, c'est-à-dire que tous ses idéaux sont
-	engendré par un élément.
-	\label{euclidian_implies_principal}
+	\begin{itemize}
+		\item Soit $p$ un nombre premier. Alors $\phi(p) = p - 1$.
+		\item Soit $n, m \geq 1$. Alors, si $m$ et $n$ sont premiers entre eux,
+			$\phi(n m) = \phi(n) \phi(m)$.
+		\item Soit $m \geq 1$ et soit $p$ un nombre premier. Alors $\phi(p^{m})
+			= (p - 1) p^{m - 1}$
+		\item Soient $n \in \naturel$, et $n = p_{1}^{m_{1}} . \cdots .
+			p_{l}^{m_{k}}$ sa décomposition en facteurs premiers. Alors
+			$\phi(n) = \displaystyle \prod_{1 \leq i \leq l} (p_{i} - 1)
+			p_{i}^{m_{i} - 1}$
+		\item Soit $n \geq 1$ un entier. Alors $\phi(n) = \displaystyle \sum_{d | n}
+			\phi(d)$.
+	\end{itemize}
 \end{proposition}
 
 \ifdefined\outputproof
 \begin{proof}
-	Prenons un anneau euclidien A, ainsi qu'un idéal I de A. Si I = $\GSset{0}$
-	ou $\GSset{0, 1}$, on a fini ($\GSset{0}$ est un idéal engendré par 0, et
-	$\GSset{0, 1} = I$ car $1 \in I$.
 
-	Sinon, I possède deux éléments x et y non nul. Nous pouvons supposer, sans
-	perte de généralité\footnote{Si y ne vérifie pas la minimalité, on prend z
-	tel que N(z) est minimal, et on remplace dans la preuve x par y et y par
-z.}, que y est tel que N(y) = $\displaystyle min_{a \in I_{0}} \GSset{N(a)}$ (en
-effet, l'ensemble des N(a) est un sous ensemble de N, donc il possède un
-minimum).  On a, comme A est euclidien, qu'il existe q et r appartenant à A tel
-que $x
-	= qy + r$, avec N(r) < N(y) ou r = 0.
-	On a alors $r = x - qy$ avec $x \in I$, $qy \in I$ (comme $q \in A$ et $y
-	\in I$ et I idéal), donc $r \in I$ comme I idéal.
-
-	Or, si $N(r) < N(y)$ avec r non nul, cela contredirait la minimalité de N(y)
-	car $r \in I_{0}$. Donc r est nul.
-
-	On a alors que $x = qy$, c'est-à-dire que si on prend à chaque fois deux
-	éléments quelconques de I, l'un est multiple de l'autre, c'est-à-dire que
-	I est principal.
 \end{proof}
 \fi
 
-\begin{corollary}
-	Les idéaux de $\integer$ (resp $\integer$[i]) sont les n$\integer$ où $n \in
-	\integer$ (resp $(a+bi) \integer$[i] où $a, b \in \integer$).
-\end{corollary}
+%\subsection{Anneau euclidien}
 
-On peut également en déduire que si un anneau possède un idéal non principal,
-alors il ne possède pas de division euclidienne, ce qui est le cas pour $Z[X]$.
-On en déduit donc que tout anneau commutatif n'est pas euclidien.
+%La proposition suivante est très importante pour définir les idéaux de certains
+%anneaux commutatifs, appelé anneau euclidien. Malheureusement, tout anneau
+%commutatif n'est pas euclidien.
 
-Par contre, nous avons :
-\begin{proposition}
-	Tout anneau euclidien est commutatif.
-\end{proposition}
+%\begin{definition} [Anneau euclidien]
+	%Soit $A$ un anneau. On dit que $A$ est un \textbf{anneau euclidien} si il existe
+	%une fonction $\GSfunction{N}{A}{\naturel_{0}}$ tel que : $\forall a, b \in
+	%A_{0}$, $\exists q, r \in A$ tel que $a = qb + r$ avec $N(r) < N(b)$ ou r =
+	%0.
+	%\label{euclidian_ring}
+%\end{definition}
 
-Nous avons la chaine d'inclusion suivante (non-exhaustive) pour les classes
-d'idéaux :
-\begin{theorem}
-	Corps
-	$\displaystyle \subsetneq$ Anneaux euclidiens
-	$\displaystyle \subseteq^{\ref{euclidian_implies_principal}}$ Anneaux principaux
-	$\subseteq$ Anneaux factoriels $\subseteq$ Anneaux intègres $\subseteq$
-	Anneaux commutatifs.
-	\label{ideal_class}
-\end{theorem}
+%\begin{exemple}
+	%\begin{enumerate}
+		%\item $\integer$ avec la valeur absolue est un anneau euclidien.
+		%\item $\integer[i]$, les entiers de Gauss, muni de la norme complexe
+			%usuelle au carré est un anneau euclidien.
+	%\end{enumerate}
+%\end{exemple}
+
+%\begin{proposition}
+	%Tout anneau euclidien est principal, c'est-à-dire que tous ses idéaux sont
+	%engendré par un élément.
+	%\label{euclidian_implies_principal}
+%\end{proposition}
+
+%\ifdefined\outputproof
+%\begin{proof}
+	%Prenons un anneau euclidien A, ainsi qu'un idéal I de A. Si I = $\GSset{0}$
+	%ou $\GSset{0, 1}$, on a fini ($\GSset{0}$ est un idéal engendré par 0, et
+	%$\GSset{0, 1} = I$ car $1 \in I$.
+
+	%Sinon, I possède deux éléments x et y non nul. Nous pouvons supposer, sans
+	%perte de généralité\footnote{Si y ne vérifie pas la minimalité, on prend z
+	%tel que N(z) est minimal, et on remplace dans la preuve x par y et y par
+%z.}, que y est tel que N(y) = $\displaystyle min_{a \in I_{0}} \GSset{N(a)}$ (en
+%effet, l'ensemble des N(a) est un sous ensemble de N, donc il possède un
+%minimum).  On a, comme A est euclidien, qu'il existe q et r appartenant à A tel
+%que $x
+	%= qy + r$, avec N(r) < N(y) ou r = 0.
+	%On a alors $r = x - qy$ avec $x \in I$, $qy \in I$ (comme $q \in A$ et $y
+	%\in I$ et I idéal), donc $r \in I$ comme I idéal.
+
+	%Or, si $N(r) < N(y)$ avec r non nul, cela contredirait la minimalité de N(y)
+	%car $r \in I_{0}$. Donc r est nul.
+
+	%On a alors que $x = qy$, c'est-à-dire que si on prend à chaque fois deux
+	%éléments quelconques de I, l'un est multiple de l'autre, c'est-à-dire que
+	%I est principal.
+%\end{proof}
+%\fi
+
+%\begin{corollary}
+	%Les idéaux de $\integer$ (resp $\integer$[i]) sont les n$\integer$ où $n \in
+	%\integer$ (resp $(a+bi) \integer$[i] où $a, b \in \integer$).
+%\end{corollary}
+
+%On peut également en déduire que si un anneau possède un idéal non principal,
+%alors il ne possède pas de division euclidienne, ce qui est le cas pour $Z[X]$.
+%On en déduit donc que tout anneau commutatif n'est pas euclidien.
+
+%Par contre, nous avons :
+%\begin{proposition}
+	%Tout anneau euclidien est commutatif.
+%\end{proposition}
+
+%Nous avons la chaine d'inclusion suivante (non-exhaustive) pour les classes
+%d'idéaux :
+%\begin{theorem}
+	%Corps
+	%$\displaystyle \subsetneq$ Anneaux euclidiens
+	%$\displaystyle \subseteq^{\ref{euclidian_implies_principal}}$ Anneaux principaux
+	%$\subseteq$ Anneaux factoriels $\subseteq$ Anneaux intègres $\subseteq$
+	%Anneaux commutatifs.
+	%\label{ideal_class}
+%\end{theorem}
 
 \subsection{Irréductibilité}
 
