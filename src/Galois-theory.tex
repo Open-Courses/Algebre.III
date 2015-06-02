@@ -594,7 +594,8 @@ Nous en venons à la définition d'extension galoisienne.
 \begin{definition}
 	Soit $L/K$ une extension finie.
 	$L/K$ est \textbf{(une extension finie) galoisienne} si $\galoisGroup{L}{K} =
-	\plongement{K}{L}{\overline{K}}$
+	\plongement{K}{L}{\overline{K}}$, ie tout isomorphisme $K$-linéaire sur $L$
+	est un $K$-plongement de $L$ dans $\overline{K}$ et inversément.
 \end{definition}
 
 C'est-à-dire que:
@@ -676,6 +677,11 @@ propriété d'être galoisienne n'est pas transitive !
 \end{proof}
 \fi
 
+\begin{exemple}
+	$\rational(\zeta_{n})/\rational$ est galoisienne, et son degré est donné par
+	$\phi(n)$ où $\phi$ est l'indicatrice d'Euler.
+\end{exemple}
+
 Maintenant, nous allons étudier les sous-groupes de $\galoisGroup{L}{K}$.
 Commençons d'abord par définir des objets grace aux sous-ensembles du groupe de
 Galois de $L/K$.
@@ -691,6 +697,7 @@ Galois de $L/K$.
 Montrons maintenant quelques propriétés.
 
 \begin{proposition}
+	\label{prop:correspondance_subgroup_to_subfield}
 	\begin{itemize}
 		\item $L^{S}$ est un sous-corps de $L$ contenant $K$.
 		\item $S \subseteq T \implies L^{T} \subseteq L^{S}$ (décroissance)
@@ -729,9 +736,15 @@ de la théorie des groupes.
 
 \section{La correspondance de Galois}
 
-Soit $L/K$ une extension finie galoisienne. Soit $\alpha \in L$.
+Soit $L/K$ une extension finie galoisienne.
+
+Soit $\alpha \in L$.
+
 Soit $\sigma \in \galoisGroup{L}{K}$.
-Soit $\beta \in Rac(P_{\alpha, K})$.
+
+Soit $\beta \in Rac(P_{\alpha, K})$, une racine du polynome minimal de $\alpha$
+sur $K$.
+
 Alors on a:
 
 $P_{\alpha, K}(\beta) = 0 \implies P_{\alpha, K}(\sigma(\beta)) = 0$
@@ -754,9 +767,13 @@ et est une action de groupe.
 \end{proof}
 \fi
 
-On obtient alors $P_{\alpha, K}(X) = \displaystyle \prod_{\sigma \in
-	\galoisGroup{L}{K}} (X - \sigma(\alpha)) = \displaystyle \prod_{\sigma \in
-		\plongement{K}{L}{\overline{K}}} (X - \sigma(\alpha))$
+On obtient alors
+
+\begin{align*}
+	P_{\alpha, K}(X) &= \displaystyle \prod_{\sigma \in
+	\galoisGroup{L}{K}} (X - \sigma(\alpha)) \\
+	&= \displaystyle \prod_{\sigma \in \plongement{K}{L}{\overline{K}}} (X - \sigma(\alpha))
+\end{align*}
 
 \begin{theorem}
 	Soit $L/K$ une extension finie galoisienne.
@@ -771,6 +788,7 @@ On obtient alors $P_{\alpha, K}(X) = \displaystyle \prod_{\sigma \in
 \fi
 
 \begin{proposition}
+	\label{prop:correspondance_subfield_to_subgroup}
 	Soit $L/K$ une extension finie.
 	Soit $F$ corps tel que $K \subseteq F \subseteq L$.
 
@@ -797,15 +815,18 @@ On obtient alors $P_{\alpha, K}(X) = \displaystyle \prod_{\sigma \in
 \end{proof}
 \fi
 
-Remarquons que $F/K$ n'est pas nécessairement galoisienne si $L/K$ est
-galoisienne. Un contre-exemple est donné par $\rational(\zeta_{4},
-\sqrt[4]{2})$, $\rational(\sqrt[4]{2})$ et $\rational$.
+\begin{remarque}
+	$F/K$ n'est pas nécessairement galoisienne si $L/K$ est
+	galoisienne. Un contre-exemple est donné par $\rational(\zeta_{4},
+	\sqrt[4]{2})$, $\rational(\sqrt[4]{2})$ et $\rational$.
+\end{remarque}
 
 Nous avons alors montré que nous pouvons construire une fonction $\phi$ qui à
 chaque sous-corps de $L$ contenant $K$ associe un sous-groupe de
-$\galoisGroup{L}{K}$ et inversément, on peut construire une fonction $\psi$ qui
-à chaque sous-groupe de $\galoisGroup{L}{K}$, on peut associer un sous-corps de
-$L$ contenant $K$.
+$\galoisGroup{L}{K}$ (\ref{prop:correspondance_subfield_to_subgroup} et
+inversément, on peut construire une fonction $\psi$ qui à chaque sous-groupe de
+$\galoisGroup{L}{K}$, on peut associer un sous-corps de $L$ contenant $K$
+(\ref{prop:correspondance_subgroup_to_subfield})
 
 Formellement, on a:
 
@@ -854,7 +875,7 @@ $\galoisGroup{L}{K}$.}
 Nous avons vu que si nous avons une extension galoisienne $L/K$ et $F$ corps tel
 que $K \subseteq F \subseteq L$, alors $L/F$ est galoisienne, mais pas
 nécessairement $F/K$.
-Nous sommes près à donner une condition nécessaire et suffisante pour que $F/K$
+Nous sommes prêt à donner une condition nécessaire et suffisante pour que $F/K$
 soit galoisienne.
 
 \begin{proposition}
