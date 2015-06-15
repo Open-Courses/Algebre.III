@@ -11,12 +11,12 @@
 
 	tel que:
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\forall a, b, c \in A$, $(ab)c = a(bc)$.
 		\item $\exists 1_{A} \in A$, $\forall a \in A$, $1_{A} a = a 1_{A} = a$.
 		\item $\forall a, b \in A$, $ab = ba$ (commutativité).
 		\item $\forall a, b, c \in A$, $a(b + c) = ab + ac$. (distributivité).
-	\end{itemize}
+	\end{enumerate}
 \end{definition}
 
 \begin{exemple}
@@ -66,7 +66,7 @@
 \end{exemple}
 
 \begin{remarque}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $1_{A}$ est unique.
 		\item $\forall a \in A$, $0_{A} a = 0_{A} = a 0_{A}$.
 		\item $-1_{A} a = -a$.
@@ -74,7 +74,7 @@
 		\item Si on enlève la distributivité à gauche dans la définition, alors
 			on obtient la définition d'un anneau. Exemple : $M_{n}(\real)$,
 			$M_{n}(\complex)$, $\GSendomorphism{G}$ ($G$ groupe abélien).
-	\end{itemize}
+	\end{enumerate}
 \end{remarque}
 
 \begin{definition}
@@ -164,13 +164,13 @@
 	morphisme de groupe tel que $f(ab) = f(a) f(b)$ et $f(1_{A}) = 1_{B}$.
 
 	De plus, c'est
-	\begin{itemize}
+	\begin{enumerate}
 		\item \textbf{un endormorphisme} si $A = B$.
 		\item \textbf{un isomorphisme} si $f$ est bijectif.
 		\item \textbf{un automorphisme} si $f$ est un isomorphisme et un
 			endormorphisme.
 		\item \textbf{un morphisme de corps} si c'est un morphisme d'anneau entre deux corps.
-	\end{itemize}
+	\end{enumerate}
 \end{definition}
 
 \begin{remarque}
@@ -250,7 +250,7 @@
 \fi
 
 \begin{proposition}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\GSfunction{f}{A}{B}$ isomorphisme d'anneau $\implies
 			\GSfunction{f^{-1}}{B}{A}$ isomorphisme d'anneau.
 		\item $\GSfunction{Id_{A}}{A}{A} : a \rightarrow a$ est un isomorphisme
@@ -261,7 +261,7 @@
 		\item Si $\GSfunction{f}{A}{B}$ est un morphisme d'anneau, alors
 			$Im(f)$ est un sous-anneau de $B$ et $\ker(f)$ est un sous-groupe de
 			$A$.
-	\end{itemize}
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -332,13 +332,13 @@
 \end{definition}
 
 \begin{exemple}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\GSset{0_{A}} = (0_{A})$, $A = (1_{A})$
 		\item $(2)_{\integer} = 2\integer \neq \integer$.
 		\item $(2)_{\rational} = 2\rational = \rational$.
 		\item $I = \GSsetDef{2 P(X) + X Q(X)}{P, Q \in \integer[X]}$ est un
 			idéal de $\integer[X]$ non principal.
-	\end{itemize}
+	\end{enumerate}
 \end{exemple}
 
 \begin{definition}
@@ -364,11 +364,11 @@
 \begin{proposition}
 	Soient $I, J$ deux idéaux d'un anneau $A$. alors
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item $I \inter J$ est le plus grand idéal de $A$ contenu dans $I$ et $J$
 		\item $I + J$ est le plus petit idéal contenant $I$ et $J$ (en
 			particulier, c'est le plus petit sous-groupe contenant $I$ et $J$).
-	\end{itemize}
+	\end{enumerate}
 	Nous pouvons généraliser à un nombre quelconque d'idéaux.
 \end{proposition}
 
@@ -457,11 +457,11 @@
 	est un morphisme d'anneau surjectif.
 
 	De plus,
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\ker(\pi_{I}) = I$
 		\item $(A / I)^{\cartprod} = \GSsetDef{a + I \in A / I}{\exists b \in A
 				\text{ tel que } ab^{-1} = I}$
-	\end{itemize}
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -471,7 +471,7 @@
 \fi
 
 \begin{exemple}
-	\begin{itemize}
+	\begin{enumerate}
 		\item $n \in \integer_{0}$, $A = \integer$, $I = n \integer \rightarrow
 			\integer / n \integer$ anneau et
 			\begin{align}
@@ -483,7 +483,7 @@
 			\end{align}
 		\item $(\integer / 6 \integer)^{\cartprod} = \GSset{1 + 6\integer = 6\integer, -1 +
 			6\integer = 5 + 6 \integer}$
-	\end{itemize}
+	\end{enumerate}
 \end{exemple}
 
 \begin{proposition}
@@ -501,10 +501,10 @@
 	\end{equation}
 
 	Dans ce cas, on a
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\Im(\overline{f}) = Im(f)$
 		\item $\ker(\overline{f}) = \ker(f) / I$
-	\end{itemize}
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -576,7 +576,7 @@
 \fi
 
 \begin{exemple}
-	\begin{itemize}
+	\begin{enumerate}
 		\item La conjugaison complexe étant un automorphisme d'anneaux de
 			$\complex$, la fonction
 			\begin{equation}
@@ -603,7 +603,7 @@
 			/ n \integer)[X]
 		\end{equation}
 
-	\end{itemize}
+	\end{enumerate}
 \end{exemple}
 
 \subsection{Le corps des réels}
@@ -644,10 +644,9 @@
 \begin{proposition}
 	Soit $A$ un anneau commutatif. Soit $a \in A$.
 
-	Alors 
+	Alors
 	\begin{equation}
 		\GSfunction{eval_{a}}{A[X]}{A} : P(X) \rightarrow P(a)
-		\label{<++>}
 	\end{equation}
 	est un morphisme d'anneau surjectif et ${(eval_{a})}_{|A} = Id_{A}$.
 \end{proposition}
@@ -659,7 +658,7 @@
 \fi
 
 \begin{proposition}
-	Pour tout $a \in A$, 
+	Pour tout $a \in A$,
 	\begin{equation}
 		\GSfunction{\tau_{a}}{A[X]}{A[X]} : P(X) \rightarrow P(X - a)
 	\end{equation}
@@ -673,7 +672,7 @@
 \fi
 
 \begin{proposition}
-	Pour tout $a \in A$, 
+	Pour tout $a \in A$,
 
 	\begin{equation}
 		eval_{a} \circ \tau_{a} = eval_{0}
@@ -723,7 +722,7 @@
 	\end{equation}
 	est un morphisme d'anneau tel que ${(eval_{b})}_{|A}$ est
 	l'inclusion de $A$ dans $B$.
-	
+
 	De plus, $Im(eval_{b}) := A[b] := $ le plus petit sous-anneau de $B$
 	contenant $A$ et $b$. % TODO noyau ? pas dans le resumé de Sam.
 \end{proposition}
@@ -754,7 +753,7 @@ Soient $I, J$ deux idéaux de $A$. Alors, nous pouvons construire
 
 Nous avons $ker(f) = I \cap J$.
 
-On a alors un morphisme injectif 
+On a alors un morphisme injectif
 \begin{equation}
 	\GSfunction{\overline{f}}{A/(I \cap J)}{A/I \times A/J}
 \end{equation}
@@ -784,7 +783,7 @@ avons alors le résultat suivant, dit théorème chinois généralisé.
 
 \begin{theorem}
 	Si pour tout $1 \leq k \leq n$, on a
-	
+
 	\begin{equation}
 		I_{k} + \displaystyle \bigcap_{{i = 1, i \neq k}}^{n} I_{i} = A
 	\end{equation}
@@ -803,7 +802,7 @@ avons alors le résultat suivant, dit théorème chinois généralisé.
 \subsection{Interprétation et applications}
 
 \begin{exemple}
-	\begin{itemize}
+	\begin{enumerate}
 		\item Soient $A = \integer$, $I = n \integer$, $J = m\integer$. On a $I
 			\inter J = ppcm(n, m) \integer$, et $I + J = pgcd(n, m) \integer$.
 			D'où $I + J = \integer \equiv pgcd(n, m) = 1 \equiv ppcm(n, m) =
@@ -826,14 +825,14 @@ avons alors le résultat suivant, dit théorème chinois généralisé.
 				P(X) \, mod(X^{2} - X) & \xrightarrow{\sim} (P(X) \, mod(X), P(X), \,
 				mod(X - 1))
 			\end{align}
-			
+
 			De plus, on a vu que $K[X] / X$ est isomorphe à $K$ grace à
 			$eval_{0}$ et $K[X] / (X - 1)$ est isomorphe à $K$ grace à
 			$eval_{1}$.
 
 			On en déduit que $K[X] / (X^{2} - X)$ est isomorphe à $K \cartprod
 			K$.
-	\end{itemize}
+	\end{enumerate}
 \end{exemple}
 
 %Le théorème chinois généralisé a une application en théorie des polynômes, dont
@@ -907,7 +906,7 @@ nuls sont inversibles.
 Enonçons quelques propriétés de l'indicatrice d'Euler.
 
 \begin{proposition}
-	\begin{itemize}
+	\begin{enumerate}
 		\item Soit $p$ un nombre premier. Alors $\phi(p) = p - 1$.
 		\item Soit $n, m \geq 1$. Alors, si $m$ et $n$ sont premiers entre eux,
 			$\phi(n m) = \phi(n) \phi(m)$.
@@ -919,7 +918,7 @@ Enonçons quelques propriétés de l'indicatrice d'Euler.
 			p_{i}^{m_{i} - 1}$
 		\item Soit $n \geq 1$ un entier. Alors $\phi(n) = \displaystyle \sum_{d | n}
 			\phi(d)$.
-	\end{itemize}
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -1007,12 +1006,220 @@ Enonçons quelques propriétés de l'indicatrice d'Euler.
 	%\label{ideal_class}
 %\end{theorem}
 
+\section{Arithmétique des anneaux}
+
+\begin{definition} [Anneau intègre]
+	Soit $A$ un anneau commutatif. On dit que $A$ est \textbf{intègre} si
+	\begin{enumerate}
+		\item $A \neq \GSset{0_{A}}$
+		\item pour tout $a, b \in A$, $ab = 0 \implies (a = 0 \text{ ou } b =
+			0)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{exemple}
+	\begin{enumerate}
+		\item $\integer$ est intègre.
+		\item Un corps est un anneau intègre.
+		\item $\integer / 6 \integer$ n'est pas intègre (car $2 . 3 = 6 = 0$).
+		\item Soient $A, B$ deux anneaux commutatifs tel que $A \subseteq B$. Si
+			$B$ est intègre, alors $A$ est intègre.
+		\item $\integer[i]$ est intègre.
+		\item Soient $A, B$ deux anneaux commutatifs non nuls. Alors $A
+			\cartprod B$ n'est pas intègre.
+	\end{enumerate}
+\end{exemple}
+
+\begin{proposition}
+	Soit $A$ un anneau intègre et soient $P(X), Q(X) \in A[X]$. Alors $def(P Q)
+	= deg(P) + deg(Q)$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $A$ un anneau intègre. Alors $A[X]$ est un anneau intègre.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soit $K$ un corps. Alors $K[X]$ est un anneau intègre.
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $A$ un anneau intègre. Alors $(A[X])^{\cartprod} = A^{\cartprod}$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	\begin{enumerate}
+		\item $(\integer[X])^{\cartprod} = \GSset{\pm 1}$.
+		\item Soit $K$ un corps. Alors $(K[X])^{\cartprod} = K^{\cartprod} =
+			\GSsetDef{P(X) \in K[X]}{deg(P) = 0}$.
+	\end{enumerate}
+\end{exemple}
+
+\begin{proposition}
+	Soit $A$ un anneau intègre.
+
+	Alors, pour tout $a, b \in A$
+	\begin{equation}
+		(a) = (b) \equiv \exists u \in A^{\cartprod} \, \, a = ub
+	\end{equation}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	\begin{enumerate}
+		\item $m \integer = n \integer \equiv m = \pm n$
+		\item Soit $K$ un corps et soient $P, Q \in K[X]$. Alors, $(P) = (Q)$
+			ssi $\exists u \in K^{\cartprod}$, $P = u Q$.
+	\end{enumerate}
+\end{exemple}
+
+\begin{corollary}
+	Soit $K$ un corps et soit $P \in K[X]$ tel que $P \neq 0$. Alors $(P)$ a un
+	unique générateur monique.
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition} [Idéal premier]
+	Soit $A$ un anneau commutatif et soit $I$ un idéal de $A$.
+	On dit que $I$ est \textbf{un idéal premier} si
+	\begin{enumerate}
+		\item $I \neq A$
+		\item pour tout $a, b \in A$, $ab \in I \implies a \in I \text{ ou } b
+			\in I$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition} [Idéal maximal]
+	Soit $A$ un anneau commutatif et soit $I$ un idéal de $A$.
+	On dit que $I$ est \textbf{un idéal maximal} si
+	\begin{enumerate}
+		\item $I \neq A$
+		\item pour tout idéal $J$ de $A$, si $I \subseteq J$, alors $J = I$ ou
+			$J = A$.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif. Alors
+	\begin{enumerate}
+		\item $(0)$ idéal premier ssi $A$ intègre.
+		\item $(0)$ idéal maximal ssi $A$ corps.
+		\item $n \integer$ premier dans $\integer$ ssi $n = 0$ ou $n = \pm p$ où
+			$p$ est premier.
+		\item $n \integer$ maximal dans $\integer$ ssi $n \pm p$ où $p$ premier.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+Généralisons la proposition précédente.
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif et soit $I$ un idéal de $A$.
+	Alors
+	\begin{enumerate}
+		\item $I$ premier ssi $A / I$ principal.
+		\item $I$ maximal ssi $A / I$ corps.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	\begin{enumerate}
+		\item $\integer / n \integer$ principal ssi $n = 0$ ou $n = \pm p$ où
+			$p$ est premier.
+		\item $\integer / n \integer$ corps ssi $n \pm p$ où $p$ premier.
+			On note alors $\mathbb{F}_{p}$ à la place de $\integer / p
+			\integer$.
+	\end{enumerate}
+\end{exemple}
+
+\begin{proposition}
+	Soit $A$ un anneau commutatif et soit $a \in A$. Alors
+	\begin{enumerate}
+		\item $A$ intègre ssi $(X - a)$ idéal premier de $A[X]$.
+		\item $A$ corps ssi $(X - a)$ idéal maximal de $A[X]$.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Tout idéal maximal est premier.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{theorem}
+	Tout idéal est contenu dans un idéal maximal.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
 \subsection{Irréductibilité}
 
 \begin{definition} [Élément irréductible]
-	Soit $a \in A$. $a$ est dit irréductible si $\forall x, y \in A$, $a = xy
-	\Rightarrow x \in A^{*}$ ou $y \in A^{*}$.
-	\label{irreductible_element}
+	\label{definition:irreductible_element}
+	Soit $a \in A$. $a$ est dit \textbf{irréductible} si pour tout $x, y \in A$
+
+	\begin{equation}
+		a = xy \implies x \in A^{\cartprod} \text{ ou } y \in A^{\cartprod}.
+	\end{equation}
 \end{definition}
 
 \begin{exemple}
@@ -1021,7 +1228,7 @@ Enonçons quelques propriétés de l'indicatrice d'Euler.
 \end{exemple}
 
 \begin{proposition}
-	$a$ est irréductible dans $A$ ssi $\forall u \in A^{*}$, $ua$ est
+	$a$ est irréductible dans $A$ ssi pour tout $u \in A^{\cartprod}$, $ua$ est
 	irréductible dans $A$.
 \end{proposition}
 
@@ -1053,22 +1260,21 @@ $\integer$ mais $2$ est réductible dans $\complex$ parce que $2 = (1 + i) (1 -
 i)$.
 
 Donnons maintenant quelques équivalences en termes d'idéaux. La définition
-\ref{irreductible_element} date du XIXè siècle, la suivante, plus couramment
+\ref{definition:irreductible_element} date du XIXè siècle, la suivante, plus couramment
 utilisée actuellement, date du début du XXè siècle.
 
 \begin{proposition}
-
 	$a$ est irréductible
 
-	$\Leftrightarrow$
-	$a \notin A^{*}, a \ne 0$ $b | a \Rightarrow b \in A^{*}$ ou $\exists u \in
-	A^{*}, b = ua$.
+	$\equiv$
+	$a \notin A^{\cartprod}, a \ne 0$ $b | a \Rightarrow b \in A^{\cartprod}$ ou $\exists u \in
+	A^{\cartprod}, b = ua$.
 
-	$\Leftrightarrow$
+	$\equiv$
 	$(a) \ne (0)$, $(a) \ne A$, $(a) \subseteq (b) \Rightarrow (b) = A$ ou $(a)
 	= (b)$
 
-	$\Leftrightarrow$
+	$\equiv$
 	$(a) \ne (0)$, $(a)$ maximal parmi les idéaux principaux différents de $A$.
 \end{proposition}
 
@@ -1078,28 +1284,8 @@ utilisée actuellement, date du début du XXè siècle.
 \end{proof}
 \fi
 
-
-
-\section{Arithmétique des anneaux}
-
-\begin{definition} [Idéal premier]
-
-\end{definition}
-
-\begin{definition} [Idéal maximal]
-
-\end{definition}
-
-\begin{definition} [Anneau intégre]
-
-\end{definition}
-
-\begin{definition} [Corps]
-
-\end{definition}
-
 \begin{proposition}
-	Tout idéal maximal est premier.
+	Soit $K$ un corps. Alors $K[X]$ est principal.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -1108,40 +1294,11 @@ utilisée actuellement, date du début du XXè siècle.
 \end{proof}
 \fi
 
-\begin{proposition}
-	Soit $I$ un idéal d'un anneau commutatif $A$.
-	\begin{enumerate}
-		\item $I$ est un idéal maximal $\Leftrightarrow A/I$ est un
-			corps.
-		\item $I$ est un idéal premier $\Leftrightarrow A/I$ est
-			intégre.
-	\end{enumerate}
-\end{proposition}
-
-\ifdefined\outputproof
-\begin{proof}
-
-\end{proof}
-\fi
-
-\begin{exemple}
-	%Z/nZ
-\end{exemple}
-
-\begin{theorem}
-	Tout idéal est contenu dans un idéal maximal.
-\end{theorem}
-
-\ifdefined\outputproof
-\begin{proof}
-
-\end{proof}
-\fi
-
-
-\section{Irréductibilité dans $\rational[X]$}
+% Page 13
 
 \section{Anneau de polynômes}
+
+\subsection{Généralités}
 
 \begin{proposition}
 	\begin{enumerate}
@@ -1229,6 +1386,185 @@ On a alors comme corollaire :
 	de degré $1$.
 \end{proposition}
 
+\subsection{Irréductibilité dans $\rational[X]$}
+
+\begin{definition}
+	Soit $P \in \rational[X]$. On définit
+	\begin{equation}
+		\chi_{P} : \integer \rightarrow \rational[X] / n \integer[X] : n
+		\rightarrow n \, P(X) \, mod(n \integer[X])
+	\end{equation}
+\end{definition}
+
+\begin{proposition}
+	Soit $P \in \rational[X]$. Alors $\chi_{P}$ est un morphisme de groupe. De
+	plus, $\ker(\chi_{P}) = \GSsetDef{n \in \integer}{n P(X) \in \integer[X]}
+	\neq 0$ est un sous-groupe de $\integer$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	Soit $P \in \rational[X]$. On définit $c(P)$ comme l'unique entier $n \geq
+	1$ tel que $\ker(\chi_{P}) = c(P) \integer$.
+\end{definition}
+
+\begin{corollary}
+	Soit $P \in \rational[X]$.
+	Alors
+	\begin{enumerate}
+		\item $c(P) = \min \GSsetDef{n \geq 1}{n P(X) \in \integer[X]}$
+		\item $(\forall n \geq 1$, $n P(X) \in \integer[X]) \equiv c(P) = 1$.
+			En particulier, $P(X) \in \integer[X] \equiv c(P) = 1$.
+	\end{enumerate}
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition} [Polynome primitif]
+	Soit $P(X) = \sum_{i = 1}^{n} a_{i} X^{i} \in \integer[X]$. On dit que $P$
+	est \textbf{primitif} si
+	\begin{enumerate}
+		\item $P(X) \neq 0$
+		\item $(a_{0}, \cdots, a_{n}) = \integer$ où $(a_{0}, \cdots, a_{n})$
+			est l'idéal engendré par $a_{0}, \cdots, a_{n}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	Soit $P(X) = \sum_{i = 1}^{n} a_{i} X^{i} \in \integer[X]$. Alors les
+	assertions suivantes sont équivalentes.
+
+	\begin{enumerate}
+		\item $P$ est primitif.
+		\item $P$ est non nul et pour tout $p$ premier, il existe $0 \leq i \leq
+			n$ tel que $p$ ne divise pas $a_{i}$.
+		\item $P$ est non nul et $pgcd(a_{0}, \cdots, a_{n}) = 1$.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{exemple}
+	$2 X^{2} + 3 X + 1$ est primitif.
+\end{exemple}
+
+\begin{proposition}
+	Soit $P(X) \in \integer[X]$. Alors, si $P$ est monique, alors $P$ est
+	primitif.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{lemma}
+	Soit $P(X) \in \rational[X]$. Si $P$ est monique, alors $c(P) P(X) \in
+	\integer[X]$ et $P$ primitif.
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{remarque}
+	Soit $R(X) \in \integer[X]$ non nul. Alors $P$ primitif ssi il existe $p$
+	premier tel que $R(X) \in \mathbb{F}[X]$ ssi il existe $p$ premier tel que
+	$\overline{R}(X) = 0$ dans $p \mathbb{F}_{p}[X]$.
+\end{remarque}
+
+\begin{lemma}
+	Soient $P, Q \in \integer[X]$. Alors, les assertions suivantes sont équivalentes.
+
+	\begin{enumerate}
+		\item $PQ$ primitif.
+		\item $P$ primitif et $Q$ primitif.
+	\end{enumerate}
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{lemma}
+	Soit $P \in \integer[X]$ primitif et soit un entier $m \geq 1$. Alors
+	$c(\frac{1}{m} P) = m$.
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{lemma} [Gauss]
+	\label{lemma:gauss}
+	Soient $P, Q \in \rational[X]$ moniques. Alors $c(PQ) = c(P) c(Q)$.
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soient $P, Q \in \rational[X]$ moniques. Alors, les assertions suivantes sont
+	équivalentes.
+
+	\begin{enumerate}
+		\item $PQ \in \integer[X]$
+		\item $P \in \integer[X]$ et $Q \in \integer[X]$.
+	\end{enumerate}
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soient $P, Q \in \rational[X]$ non nuls. Alors, les assertions suivantes sont
+	équivantes.
+
+	\begin{enumerate}
+		\item $PQ \in \integer[X]$
+		\item il existe $P_{0}, Q_{0} \in \integer[X]$ tel que $deg(P_{0}) =
+			deg(P)$, $deg(Q_{0}) = deg(Q)$ et $P_{0} Q_{0} = PQ$.
+	\end{enumerate}
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{remarque}
+	Soit $P \in \rational[X]$.
+	Si $P \in \integer[X]$ et $P$ réductible dans $\rational[X]$, alors $P$ est
+	réductible dans $\integer[X]$.
+\end{remarque}
+
 \subsection{Polynômes à coefficients dans $\integer[X]$}
 
 Dans cette partie nous allons étudier les propriétés que les polynômes à
@@ -1248,7 +1584,7 @@ Prenons $P(X)$ qui n'est pas inversible dans $\rational[X]$ (resp dans
 $\integer[X]$).
 Ce polynôme $P(X)$ est irréductible dans $\rational[X]$ (resp $\integer[X]$) si
 pour toute décomposition de $P(X)$ en deux polynômes $Q(X)$ et $R(X)$ ($P =
-QR$), on a $Q(X) \in \rational$ ou $R(X) \in \rational_{0}$ (resp $Q(X) = \pm 1$
+QR$), on a $Q(X) \in \rational_{0}$ ou $R(X) \in \rational_{0}$ (resp $Q(X) = \pm 1$
 ou $R(X) = \pm 1$ car les inversibles de $\integer[X]$ sont $1$ et $-1$).
 
 Prenons $P(X) = 2X-2$. On a $P(X)$ qui est irréductible dans
@@ -1271,18 +1607,19 @@ Nous avons tout de même, sous certaines hypothèses, que l'implication est vrai
 \end{proof}
 \fi
 
-\begin{theorem} [Critère Eisenstein\footnote{Ferdinand \textbf{Gotthold} Max
-		\textbf{Eisenstein} : 16 avril 1823 (Berlin) - 11 octobre 1862 (Berlin).
-Mathématicien allemand d'origine juive. Mort de tuberculose. Élève de Dirichlet
-à l'université de Berlin.}]
+\begin{theorem} [Critère Eisenstein
+		\footnote{Ferdinand \textbf{Gotthold} Max \textbf{Eisenstein} : 16 avril
+	1823 (Berlin) - 11 octobre 1862 (Berlin).  Mathématicien allemand d'origine
+juive. Mort de tuberculose. Élève de Dirichlet à l'université de Berlin.}]
+
 	Soit $p$ premier tel que :
 
-	\begin{itemize}
+	\begin{enumerate}
 		\item $p$ ne divise pas $a_{n}$
 		\item $\forall i \in \left\{ 0, \ldots, n - 1 \right\}$, $p$ divise
 			$a_{i}$.
 		\item $p^{2}$ ne divise pas $a_{0}$.
-	\end{itemize}
+	\end{enumerate}
 	\label{critere_E}
 	Alors, $P(X)$ est irréductible dans $\rational[X]$.
 \end{theorem}
@@ -1313,6 +1650,8 @@ polynôme. Celui-ci se sert du corps $\integer/p\integer$ où p est premier.
 \begin{corollary}
 	Grace à ce dernier théorème, on en déduit que $X^{p - 1} + \ldots + X + 1$
 	est irréductible dans $Q[X]$ (et dans $\integer[X]$) quand p est premier.
+
+	De plus, $X^{p} - 1 = (X - 1) (X^{p - 1} + \cdots + X + 1)$.
 \end{corollary}
 
 \ifdefined\outputproof
@@ -1321,22 +1660,111 @@ polynôme. Celui-ci se sert du corps $\integer/p\integer$ où p est premier.
 \end{proof}
 \fi
 
+
 \subsection{Polynômes cyclotomiques}
 
-Nous allons maintenant étudier certains polynômes appelés polynômes
-cyclotomiques.
+Nous allons maintenant étudier certains polynômes appelés \textbf{polynômes
+cyclotomiques.}
 
-%D'abord, rappelons que le polynôme $X^{n} - 1$ possèdent n racines complexes,
-%appelées racines n-ième de l'unité, et qui sont $e^{\frac{2ki\pi}{n}}$, où $k$ va
-%de $0$ à $n - 1$. On peut de la même manière dire que $k \in
-%\integer/n\integer$.
+D'abord, rappelons que le polynôme $X^{n} - 1$ possèdent n racines complexes,
+appelées racines n-ième de l'unité, et qui sont $e^{\frac{2ki\pi}{n}}$, où $k$ va
+de $0$ à $n - 1$. On peut de la même manière dire que $k \in
+\integer/n\integer$.
 
-%De plus, les racines n-ième de l'unité forment un groupe d'ordre n, qui est
-%l'unique sous-groupe d'ordre n de $\complex$, qui est cyclique, et isomorphe à
-%$\integer/n\integer$.
+De plus, les racines n-ième de l'unité forment un groupe d'ordre n, qui est
+l'unique sous-groupe d'ordre n de $\complex$, qui est cyclique, et isomorphe à
+$\integer/n\integer$.
 
-%On a, si on prend une de ces racines qui est d'ordre $d$, alors il engendre un
-%unique sous-groupe d'ordre $d$. Ce $d$ doit diviser $n$ par le théorème de
-%Lagrange. Dénotons cet unique sous-groupe d'ordre d par $S_{d}$.
+Si on prend une de ces racines qui est d'ordre $d$, alors il engendre un
+unique sous-groupe d'ordre $d$. Ce $d$ doit diviser $n$ par le théorème de
+Lagrange. Notons cet unique sous-groupe d'ordre d par $S_{d}$.
 
+Nous allons poser une notation pour les racines de l'unité.
 
+\begin{notation}
+	$\zeta_{n}^{k} := e^{\frac{2 i k \pi}{n}}$
+\end{notation}
+
+\begin{proposition}
+	Dans $\complex[X]$, on a
+	\begin{equation}
+		X^{n} - 1 = \displaystyle \prod_{d|n} \prod_{k \in (\integer/ d \integer)^{\cartprod}} (X
+		- \zeta_{d}^{k})
+	\end{equation}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition} [Polynômes cyclotomiques]
+	Soit $n \geq 1$. On définit \textbf{le $n$-ième polynome cyclotomique}, noté
+	$\Phi_{n}(X)$, par le polynome complexe
+	\begin{equation}
+		\Phi_{n}(X) = \prod_{k \in (\integer/ n \integer)^{\cartprod}} (X - \zeta_{n}^{k})
+	\end{equation}
+\end{definition}
+
+\begin{proposition}
+	Soit $p$ premier.
+	On a $\Phi_{p}(X) = X^{p - 1} + \cdots + X + 1$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $n \geq 1$. On a $deg(\Phi_{n}) = \phi(n)$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $n \geq 1$. On a
+	\begin{equation}
+		\Phi_{n}(X) = \prod_{d | n} \Phi_{d}(X)
+	\end{equation}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $n \geq 1$. On a $\Phi_{n} (X) \in \integer[X]$.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{theorem}
+	Soit $n \geq 1$. Alors $\Phi_{n}(X)$ est irréductible dans $\rational[X]$.
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $n \geq 1$. Alors la décomposition de $X^{n} - 1$ en facteur
+	irréductible dans $\rational[X]$ est donnée par
+	\begin{equation}
+		\Phi_{n}(X) = \prod_{d | n} \Phi_{d}(X)
+	\end{equation}
+\end{proposition}
