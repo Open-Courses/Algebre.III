@@ -1,10 +1,14 @@
-# Algebre.III
+# Algèbre III
 
 Cours d'algèbre III donné à l'Université de Mons (UMONS) pendant l'année 2014-2015
 
 **Toutes les preuves ne sont pas présentes, voire aucune. Il peut aussi avoir
 des erreurs. N'hésitez pas à contribuer pour le transformer en un cours
 complet.**
+
+**Ceci n'est en aucun cas un syllabus/cours approuvé par le professeur. Le nom est donné
+uniquement pour que les étudiants se retrouvent dans les notes. Pour toutes
+plaintes, merci de nous contacter par mail à l'adresse contact@open-courses.org**
 
 ## Comment compiler
 
