@@ -36,7 +36,7 @@
 
 \begin{remarque}
 	$(A[X])[Y] = A[X, Y]$, ie les polynomes à deux variables sont les polynomes
-	construit sur un anneau de polynomes.
+	construits sur un anneau de polynomes.
 \end{remarque}
 
 \begin{proposition}
@@ -538,7 +538,7 @@
 
 \begin{proposition}
 	Soit $A$ un anneau commutatif. Il existe un unique morphisme d'anneau
-	$\GSfunction{\mu_{A}}{\integer}{A} : n \integer n 1_{A}$ et $\exists c_{A} \in
+	$\GSfunction{\mu_{A}}{\integer}{A} : n \rightarrow n 1_{A}$ et $\exists c_{A} \in
 	\naturel$ tel que $\ker{\mu_{A}} = c_{A} \integer$.
 \end{proposition}
 
@@ -549,7 +549,8 @@
 \fi
 
 \begin{definition}
-	$c_{A}$ est appelé \textbf{la caractéristique de $A$}.
+	$c_{A}$ est appelé \textbf{la caractéristique de $A$}. En d'autres termes, la
+  caractéristique d'un anneau est l'ordre de l'élément multiplicatif.
 \end{definition}
 
 \begin{exemple}
@@ -566,7 +567,8 @@
 		\GSfunction{\tilde{f}}{A[X]}{B[X]} : P(X) = \sum_{i = 1}^{k} a_{k} X^{k}
 	\rightarrow \sum_{i = 1}^{k} f(a_{k}) X^{k}
 	\end{equation}
-	est un morphisme d'anneaux. De plus, $\tilde{f}_{|A} = f$.
+	est un morphisme d'anneaux. De plus, $\tilde{f}_{|A} = f$. En d'autres termes,
+  tout morphisme d'anneau peut être étendu dans l'anneau des polynômes.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -1031,7 +1033,7 @@ Enonçons quelques propriétés de l'indicatrice d'Euler.
 \end{exemple}
 
 \begin{proposition}
-	Soit $A$ un anneau intègre et soient $P(X), Q(X) \in A[X]$. Alors $def(P Q)
+	Soit $A$ un anneau intègre et soient $P(X), Q(X) \in A[X]$. Alors $deg(P Q)
 	= deg(P) + deg(Q)$.
 \end{proposition}
 
@@ -1327,8 +1329,9 @@ utilisée actuellement, date du début du XXè siècle.
 
 \begin{proposition}
 	Soit $K$ un corps,
-	Pour tout idéal $I$ non nul, il existe un \textbf{unique} $P \in K[X]$
-	\textbf{monique} tel que $I = (P)$.
+	Pour tout idéal $I$ non nul de $K[X]$, il existe un \textbf{unique} $P \in K[X]$
+	\textbf{monique} tel que $I = (P)$. En d'autres termes, tout idéal est
+  engengré par un unique polynome monique dans un anneau de polynome sur un corps.
 \end{proposition}
 
 \ifdefined\outputproof
